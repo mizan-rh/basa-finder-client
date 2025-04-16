@@ -11,7 +11,7 @@ const layout = ({
       {/* navbar */}
       <Navbar />
       {/* main content */}
-      <div className=" min-h-screen">{children}</div>
+      <div className=" min-h-screen h-[2000px]">{children}</div>
       {/* footer */}
     </div>
   );

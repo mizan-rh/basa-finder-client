@@ -37,7 +37,15 @@ const Navbar = () => {
     <div>
       {/* navbar content */}
       <header
-        className={scrolled ? " bg-white " : "bg-black opacity-70 text-white"}
+        className={
+          scrolled
+            ? " bg-white fixed top-0 left-0 w-full"
+            : `${
+                pathname === "/"
+                  ? "bg-transparent fixed top-0 left-0 w-full"
+                  : " bg-white text-black"
+              }`
+        }
       >
         <div className="p-4 flex justify-between items-center">
           {/* brand - website log*/}
@@ -52,7 +60,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm lg:text-base text-white hover:text-blue-600 transition ${
+                  className={`text-sm lg:text-base text-black hover:text-blue-600 transition ${
                     pathname === link.href ? "font-medium text-blue-600" : ""
                   }`}
                 >
@@ -72,7 +80,9 @@ const Navbar = () => {
 
             {/* User Authentication - Desktop dynamic is user exit user*/}
             <Link href="/login">
-              <button className="rounded border-1 px-4">Login</button>
+              <button className="rounded border-[#0AA5CD] border-1 text-[#0AA5CD] px-4">
+                Login
+              </button>
             </Link>
           </div>
         </div>
