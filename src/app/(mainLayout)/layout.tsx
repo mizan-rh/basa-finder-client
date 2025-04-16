@@ -1,3 +1,4 @@
+import Navbar from "@/components/shared/Navbar";
 import React from "react";
 
 const layout = ({
@@ -5,7 +6,15 @@ const layout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <div>{children}</div>;
+  return (
+    <div>
+      {/* navbar */}
+      <Navbar />
+      {/* main content */}
+      <div className=" min-h-screen">{children}</div>
+      {/* footer */}
+    </div>
+  );
 };
 
 export default layout;
