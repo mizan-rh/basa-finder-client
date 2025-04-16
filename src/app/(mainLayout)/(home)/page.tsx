@@ -1,3 +1,4 @@
+import Bannar from "@/components/modules/home/bannar/Bannar";
 import React from "react";
 
 const page = () => {
@@ -5,7 +6,9 @@ const page = () => {
     <div>
       {/* add or create all home page info & content static  */}
       {/* Bannar dynamic */}
-      <div className=""></div>
+      <div className="">
+        <Bannar />
+      </div>
       {/* populer items list dynamic */}
       <div className=""></div>
       {/* listing dynamic */}
