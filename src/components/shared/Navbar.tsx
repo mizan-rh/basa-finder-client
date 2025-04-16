@@ -39,11 +39,11 @@ const Navbar = () => {
       <header
         className={
           scrolled
-            ? " bg-white fixed top-0 left-0 w-full"
+            ? " bg-white fixed top-0 left-0 w-full shadow-2xs"
             : `${
                 pathname === "/"
-                  ? "bg-transparent fixed top-0 left-0 w-full"
-                  : " bg-white text-black"
+                  ? "bg-transparent fixed text-white font-bold top-0 left-0 w-full shadow-2xs"
+                  : " bg-white text-black shadow-2xs font-bold"
               }`
         }
       >
@@ -60,8 +60,8 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-sm lg:text-base text-black hover:text-blue-600 transition ${
-                    pathname === link.href ? "font-medium text-blue-600" : ""
+                  className={`text-sm lg:text-base ${
+                    pathname === link.href ? "text-[#0AA5CD]" : ""
                   }`}
                 >
                   {link.name}
