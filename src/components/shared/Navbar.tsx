@@ -105,21 +105,25 @@ const Navbar = () => {
           </div>
 
           {/* user */}
-          <div className="">
+          <div className="  flex  gap-4">
             {/* Cart with responsive spacing */}
             <div className="">
-              <Link href="/cart" className="relative ml-1">
+              <Link href="/cart" className="relative">
                 <Button
                   variant="outline"
                   size="sm"
-                  className="rounded-full flex items-center h-9 w-9 p-0 justify-center"
+                  className="rounded-full flex items-center bg-transparent h-9 w-9 p-0 justify-center"
                 >
                   <ShoppingCart className="w-4 h-4" />
-                  {products?.length > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  {/* {products?.length > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
                       {products.length > 9 ? "9+" : products.length}
                     </span>
-                  )}
+                  )} */}
+                  {/* static update on server */}
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                    0
+                  </span>
                 </Button>
               </Link>
             </div>
@@ -170,7 +174,11 @@ const Navbar = () => {
               </DropdownMenu>
             ) : (
               <Link href="/login">
-                <Button variant="outline" size="sm" className="rounded-full">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="rounded-full bg-transparent"
+                >
                   Login
                 </Button>
               </Link>
