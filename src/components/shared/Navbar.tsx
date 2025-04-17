@@ -81,7 +81,7 @@ const Navbar = () => {
               }`
         }
       >
-        <div className="p-4 flex justify-between items-center">
+        <div className="py-4 px-4 md:px-20 flex justify-between items-center">
           {/* brand - website log*/}
           <div className="">
             <Image className="w-56" src={brand} alt="BasaFinder Logo" />
@@ -108,25 +108,22 @@ const Navbar = () => {
           </div>
 
           {/* user */}
-          <div className="  flex  gap-4">
+          <div className="  flex  gap-4 md:gap-8">
             {/* Cart with responsive spacing */}
             <div className="">
               <Link href="/cart" className="relative">
-                <Button
-                  variant="outline"
-                  className=" flex items-center bg-transparent border-0 justify-center"
-                >
-                  <ShoppingCart className=" text-9xl" />
+                <button className=" flex items-center cursor-pointer bg-transparent text-[#0AA5CD] border-0 justify-center">
+                  <ShoppingCart className=" " />
                   {/* {products?.length > 0 && (
                     <span className="absolute -top-1 -right-1 bg-red-500 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
                       {products.length > 9 ? "9+" : products.length}
                     </span>
                   )} */}
                   {/* static update on server */}
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-3 h-3 flex p-2 items-center justify-center">
                     0
                   </span>
-                </Button>
+                </button>
               </Link>
             </div>
 
@@ -176,8 +173,8 @@ const Navbar = () => {
               </DropdownMenu>
             ) : (
               <Link href="/login">
-                <button className="border-0">
-                  <FaRegCircleUser className=" !text-9xl" />
+                <button className="text-[#0AA5CD] cursor-pointer">
+                  <FaRegCircleUser className=" text-2xl " />
                 </button>
               </Link>
             )}
