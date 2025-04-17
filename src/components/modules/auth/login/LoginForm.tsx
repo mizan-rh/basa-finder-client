@@ -14,14 +14,13 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 // import { loginUser, reCaptchaTokenVerification } from "@/services/AuthService";
-import { loginUser} from "@/services/AuthService";
+import { loginUser } from "@/services/AuthService";
 import { toast } from "sonner";
 import { loginSchema } from "./loginValidation";
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useUser } from "@/context/UserContext";
-import logo from "@/assets/logo.png";
-import Image from "next/image";
+
 import { Eye, EyeOff } from "lucide-react";
 
 export default function LoginForm() {
@@ -72,29 +71,15 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="bg-blue-300 border-2 border-gray-300 rounded-xl flex-grow max-w-md w-full p-5">
-      <div className="flex items-center flex-col space-x-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src={logo}
-            alt="BasaFinder Logo"
-            width={40}
-            height={32}
-            className="w-8 h-auto sm:w-10 md:w-12"
-          />
-          <span className="text-lg sm:text-xl md:text-2xl font-bold">
-            BasaFinder
-          </span>
-        </Link>
-
+    <div className="mx-auto flex-grow max-w-sm w-full p-5">
+      <div className="flex items-center flex-col space-x-4 py-2">
         <div>
           <h1 className="text-xl font-semibold text-center">Login</h1>
           <p className="font-extralight text-sm text-gray-600">Welcome back!</p>
         </div>
       </div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4">
           <FormField
             control={form.control}
             name="email"
@@ -154,7 +139,6 @@ export default function LoginForm() {
           >
             {isSubmitting ? "Logging...." : "Login"}
           </Button>
-
         </form>
       </Form>
       <p className="text-sm text-gray-600 text-center my-3">
