@@ -21,6 +21,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LogOut, User, LayoutDashboardIcon, ShoppingCart } from "lucide-react";
 import { logout } from "@/services/AuthService";
 // import { DialogTitle } from "@radix-ui/react-dialog";
+
+import { FaRegCircleUser } from "react-icons/fa6";
+
 const Navbar = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -111,10 +114,9 @@ const Navbar = () => {
               <Link href="/cart" className="relative">
                 <Button
                   variant="outline"
-                  size="sm"
-                  className="rounded-full flex items-center bg-transparent h-9 w-9 p-0 justify-center"
+                  className=" flex items-center bg-transparent border-0 justify-center"
                 >
-                  <ShoppingCart className="w-4 h-4" />
+                  <ShoppingCart className=" text-9xl" />
                   {/* {products?.length > 0 && (
                     <span className="absolute -top-1 -right-1 bg-red-500 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
                       {products.length > 9 ? "9+" : products.length}
@@ -174,13 +176,9 @@ const Navbar = () => {
               </DropdownMenu>
             ) : (
               <Link href="/login">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="rounded-full bg-transparent"
-                >
-                  Login
-                </Button>
+                <button className="border-0">
+                  <FaRegCircleUser className=" !text-9xl" />
+                </button>
               </Link>
             )}
           </div>
