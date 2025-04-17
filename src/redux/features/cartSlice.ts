@@ -1,4 +1,4 @@
-import { IProduct } from "@/types";
+import IProduct from "@/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 import { addCoupon } from "@/services/cart";
