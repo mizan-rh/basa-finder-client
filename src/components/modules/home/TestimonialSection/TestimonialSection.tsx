@@ -38,7 +38,7 @@ const testimonials = [
 const TestimonialSection = () => {
   return (
     <section className=" py-20 px-4 container mx-auto">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 mt-20">
         <p className="text-sm uppercase tracking-widest text-[#0AA5CD]">
           Testimonials
         </p>
