@@ -1,4 +1,4 @@
-import ListingBanner from "@/components/modules/listings/banner";
+// import ListingBanner from "@/components/modules/listings/banner";
 
 import ListingDetails from "@/components/modules/listings/listingDetails";
 import NMContainer from "@/components/ui/core/NMContainer";
@@ -17,12 +17,12 @@ const ListingDetailsPage = async ({
 
   return (
     <NMContainer>
-      <ListingBanner
+      {/* <ListingBanner
         // title="Listing Details"
         // path="Home - Listings - Listing Details"
         title=""
         path=""
-      />
+      /> */}
       {/* <ProductDetails product={product} /> */}
       <ListingDetails listing={listing} />
     </NMContainer>
