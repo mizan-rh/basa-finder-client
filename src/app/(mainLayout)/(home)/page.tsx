@@ -1,4 +1,4 @@
-import AboutUs from "@/components/modules/about/About";
+import Contact from "@/components/modules/home/Contact/Contact";
 import HeroBanner from "@/components/modules/home/Herobanner/HeroBanner";
 import RulesSection from "@/components/modules/home/RulesSection/RulesSection";
 import TestimonialSection from "@/components/modules/home/TestimonialSection/TestimonialSection";
@@ -18,11 +18,12 @@ const page = () => {
       <div className="">
         <RulesSection />
       </div>
-      <div className="">
-        <AboutUs />
-      </div>
+
       <div className="">
         <TestimonialSection />
+      </div>
+      <div className="">
+        <Contact />
       </div>
 
       {/* populer items list dynamic */}
