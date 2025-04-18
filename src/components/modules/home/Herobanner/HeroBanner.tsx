@@ -7,8 +7,8 @@ import Link from "next/link";
 
 const HeroBanner = () => {
   return (
-    <section className="container mx-auto px-6 lg:px-10 z-20  bg-gray-50 py-20 min-h-screen ">
-      <div className=" grid  md:grid-cols-2 mt-10 items-center gap-10">
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
+      <div className="grid md:grid-cols-2 items-center gap-10">
         {/* Image Section */}
         <motion.div
           initial={{ opacity: 0, x: 80 }}
@@ -16,13 +16,12 @@ const HeroBanner = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex justify-center"
         >
-          <div className=" w-full  rounded-2xl overflow-hidden shadow-xl">
+          <div className="w-full h-80 sm:h-96 md:h-[400px] relative rounded-2xl overflow-hidden shadow-xl">
             <Image
               src={bedroom}
               alt="Rental House"
-              width={700}
-              height={600}
-              className="object-cover w-full h-full"
+              fill
+              className="object-cover"
               priority
             />
           </div>
@@ -33,18 +32,17 @@ const HeroBanner = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-gray-800"
+          className="text-gray-800 text-center md:text-left"
         >
-          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-5">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
             <span className="text-[#0AA5CD]">Find</span> Your Perfect Rental
             Home Today!
           </h1>
-          <p className="text-lg mb-8 ">
+          <p className="text-sm sm:text-base my-10 sm:my-8 max-w-xl mx-auto md:mx-0">
             BasaFinder connects tenants with the perfect homes and helps
-            landlords reach the perfect homes and helps landlords reach the
-            right people — securely, smartly, and easily.
+            landlords reach the right people — securely, smartly, and easily.
           </p>
-          <div className="flex flex-wrap gap-4 pt-16">
+          <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
             <Link href="/dashboard/landlord">
               <button className="bg-[#0AA5CD] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#088aa9] transition duration-300">
                 Post a Rental
