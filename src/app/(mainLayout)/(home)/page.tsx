@@ -1,5 +1,8 @@
+import AboutUs from "@/components/modules/about/About";
+import HeroBanner from "@/components/modules/home/Herobanner/HeroBanner";
+import RulesSection from "@/components/modules/home/RulesSection/RulesSection";
+import TestimonialSection from "@/components/modules/home/TestimonialSection/TestimonialSection";
 import Bannar from "@/components/modules/home/bannar/Bannar";
-import React from "react";
 
 const page = () => {
   return (
@@ -9,12 +12,25 @@ const page = () => {
       <div className="">
         <Bannar />
       </div>
+      <div className="">
+        <HeroBanner />
+      </div>
+      <div className="">
+        <RulesSection />
+      </div>
+      <div className="">
+        <AboutUs />
+      </div>
+      <div className="">
+        <TestimonialSection />
+      </div>
+
       {/* populer items list dynamic */}
       <div className=""></div>
       {/* listing dynamic */}
       <div className=""></div>
       {/* add why couse us static  */}
-      <div className=""></div>
+
       {/* home page sort slider static upcoming */}
       <div className=""></div>
       {/* clint review dynamic*/}
