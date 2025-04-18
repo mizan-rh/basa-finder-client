@@ -89,7 +89,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
             <label className="block text-sm font-medium mb-1">
               Price Range
             </label>
-            <div className="px-2">
+            <div className="px-2 ">
               <Slider
                 defaultValue={[0, 50000]}
                 min={0}
@@ -97,7 +97,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
                 step={1000}
                 value={priceRange}
                 onValueChange={(value) => setPriceRange(value)}
-                className="mt-2"
+                className="mt-2 bg-[#0AA5CD]"
               />
               <div className="flex justify-between mt-2 text-sm text-gray-600">
                 <span>৳{priceRange[0].toLocaleString()}</span>
@@ -130,7 +130,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
           <div className="flex flex-col gap-2">
             <Button
               onClick={handleSearch}
-              className="bg-blue-600 text-white hover:bg-blue-700 flex-1"
+              className="bg-[#0AA5CD] text-white hover:bg-black flex-1"
             >
               Search
             </Button>
