@@ -68,6 +68,8 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "About-Us", href: "/about" },
     { name: "All-Rentals", href: "/listings" },
+    { name: "Contact", href: "/contact" },
+
     // add more menu if work onther routes
 
     ...(user ? [{ name: "Dashboard", href: `/${user.role}s/dashboard` }] : []),
