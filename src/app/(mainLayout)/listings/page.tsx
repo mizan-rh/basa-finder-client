@@ -15,6 +15,7 @@ import ListingCard from "@/components/ui/core/ListingCard";
 import NMContainer from "@/components/ui/core/NMContainer";
 import { getAllListings } from "@/services/Listings";
 import { TRentalListing } from "@/types/listings";
+import Link from "next/link";
 
 type ListingWithId = TRentalListing & { _id: string };
 
@@ -147,15 +148,15 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
       {/* Listings Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold">All Listings</h2>
-        {/* <Link href="/listings">
+        <Link href="/listings">
           <Button variant="outline" className="rounded-full">
             View All
           </Button>
-        </Link> */}
+        </Link>
       </div>
 
       {/* Listings Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-10 py-8">
         {filteredListings.length > 0 ? (
           filteredListings.map((listing: ListingWithId, idx: number) => (
             <ListingCard
