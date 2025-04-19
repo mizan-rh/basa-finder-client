@@ -3,15 +3,26 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { verifyPayment } from "@/services/Payments";
-import { 
-  Card, 
+import {
+  Card,
   CardContent,
-  CardHeader, 
+  CardHeader,
   CardTitle,
-  CardDescription
+  CardDescription,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Loader2, CheckCircle, XCircle, Home, FileText, Mail, CreditCard, Save, DollarSign, ArrowRight } from "lucide-react";
+import {
+  Loader2,
+  CheckCircle,
+  XCircle,
+  Home,
+  FileText,
+  Mail,
+  CreditCard,
+  Save,
+  DollarSign,
+  ArrowRight,
+} from "lucide-react";
 
 // Type for payment data
 interface PaymentData {
@@ -30,7 +41,7 @@ export default function VerifyPayment() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const orderId = searchParams.get("order_id");
-  
+
   const [isLoading, setIsLoading] = useState(true);
   const [paymentData, setPaymentData] = useState<PaymentData | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -46,7 +57,7 @@ export default function VerifyPayment() {
 
       try {
         const response = await verifyPayment(orderId);
-        
+
         if (response.success && response.data?.length > 0) {
           setPaymentData(response.data[0]);
         } else {
@@ -69,18 +80,22 @@ export default function VerifyPayment() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex justify-center items-center bg-blue-500">
-        <Loader2 className="w-8 h-8 text-white animate-spin" />
+      <div className="min-h-screen flex justify-center items-center ">
+        <Loader2 className="w-8 h-8 text-black animate-spin" />
       </div>
     );
   }
 
   return (
     // <div className="min-h-screen flex justify-center items-center p-6 bg-gradient-to-br from-blue-50 to-blue-600">
-    <div className="min-h-screen flex justify-center items-center p-6 bg-gradient-to-br from-blue-500 to-cyan-600">
-      <Card className="w-full max-w-3xl shadow-xl rounded-xl border border-blue-200 overflow-hidden transition-all duration-300 hover:shadow-2xl">
+    <div className="min-h-screen flex justify-center items-center p-6 b">
+      <Card className="w-full max-w-3xl shadow-xl rounded-xl overflow-hidden transition-all duration-300 hover:shadow-2xl">
         <CardHeader className="text-center pb-2">
-          <div className={`mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full shadow-lg ${paymentData?.is_verify ? 'bg-blue-900' : 'bg-red-600'}`}>
+          <div
+            className={`mx-auto mb-4 w-16 h-16 flex items-center justify-center rounded-full shadow-lg ${
+              paymentData?.is_verify ? "bg-blue-900" : "bg-red-600"
+            }`}
+          >
             {paymentData?.is_verify ? (
               <CheckCircle className="w-8 h-8 text-white" />
             ) : (
@@ -91,9 +106,10 @@ export default function VerifyPayment() {
             Payment Verification
           </CardTitle>
           <CardDescription className="text-gray-600 mt-1">
-            {paymentData?.is_verify 
-              ? "Your payment has been successfully verified!" 
-              : error || "Payment verification failed. Please check your order details."}
+            {paymentData?.is_verify
+              ? "Your payment has been successfully verified!"
+              : error ||
+                "Payment verification failed. Please check your order details."}
           </CardDescription>
         </CardHeader>
 
@@ -131,7 +147,11 @@ export default function VerifyPayment() {
                   <XCircle className="h-5 w-5 text-red-500" />
                 )}
                 <span className="font-semibold">Payment Status:</span>
-                <span className={paymentData.is_verify ? "text-green-500" : "text-red-500"}>
+                <span
+                  className={
+                    paymentData.is_verify ? "text-green-500" : "text-red-500"
+                  }
+                >
                   {paymentData.is_verify ? "Verified ✅" : "Not Verified ❌"}
                 </span>
               </div>
@@ -163,7 +183,7 @@ export default function VerifyPayment() {
           )}
 
           <div className="mt-6 text-center pb-2">
-            <Button 
+            <Button
               onClick={handleHomeRedirect}
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 font-semibold rounded-lg"
             >
