@@ -29,8 +29,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="w-full py-20 ">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="contact" className="w-full pt-20 ">
+      <div className="container mx-auto ">
         <p className="text-sm uppercase tracking-widest text-[#0AA5CD] text-center">
           BASA FINDER
         </p>
@@ -38,7 +38,7 @@ const Contact: React.FC = () => {
           Contact Me
         </h2>
 
-        <div className="mt-12 rounded-b-xl p-10 bg-gradient-to-r from-[#0AA5CD] to-[#9BE8FF] flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+        <div className="mt-12  p-10 bg-gradient-to-r from-[#0AA5CD] to-[#9BE8FF] flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
           {/* Form Section */}
           <div className="w-full lg:w-1/2 bg-white p-6 md:p-10 rounded-2xl shadow-2xl">
             <p className="text-xl font-semibold text-center text-gray-700 mb-6">

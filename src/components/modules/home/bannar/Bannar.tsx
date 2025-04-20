@@ -135,14 +135,14 @@ const Bannar: React.FC<RentalListingsProps> = ({ initialListings }) => {
                   <div className="flex flex-col gap-2">
                     <Button
                       onClick={handleSearch}
-                      className="bg-[#0AA5CD] text-white hover:bg-black flex-1"
+                      className="bg-[#0AA5CD] hover:bg-[#088aa9]  text-white flex-1"
                     >
                       Search
                     </Button>
                     <Button
                       onClick={handleReset}
                       variant="outline"
-                      className="border-blue-300 text-blue-600"
+                      className="border-blue-300 text-[#0AA5CD] rounded-xl"
                     >
                       Reset
                     </Button>
