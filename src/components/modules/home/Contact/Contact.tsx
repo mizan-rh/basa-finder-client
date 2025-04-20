@@ -29,22 +29,22 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="w-full py-20 bg-gradient-to-r from-[#0AA5CD] to-[#9BE8FF]"
-    >
-      <div className="container mx-auto px-4 lg:px-8">
-        <h2 className="text-3xl lg:text-4xl text-center font-bold text-white uppercase">
+    <section id="contact" className="w-full pt-20 ">
+      <div className="container mx-auto ">
+        <p className="text-sm uppercase tracking-widest text-[#0AA5CD] text-center">
+          BASA FINDER
+        </p>
+        <h2 className="text-3xl lg:text-4xl text-center font-bold text-gray-800 uppercase">
           Contact Me
         </h2>
 
-        <div className="mt-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+        <div className="mt-12  p-10 bg-gradient-to-r from-[#0AA5CD] to-[#9BE8FF] flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
           {/* Form Section */}
           <div className="w-full lg:w-1/2 bg-white p-6 md:p-10 rounded-2xl shadow-2xl">
             <p className="text-xl font-semibold text-center text-gray-700 mb-6">
               Send Me a Message
             </p>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div>
                 <label
                   htmlFor="name"
@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
                 />
               </div>
 
-              <div className="text-center">
+              <div className="text-center mt-10">
                 <button
                   type="submit"
                   className="bg-[#0AA5CD] hover:bg-[#088aa9] text-white px-6 py-3 rounded-xl font-semibold transition duration-300"

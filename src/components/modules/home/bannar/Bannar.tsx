@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import NMContainer from "@/components/ui/core/NMContainer";
 import { Input } from "@/components/ui/input";
-import { Slider } from "@/components/ui/slider";
 import {
   Select,
   SelectContent,
@@ -11,11 +10,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import ListingCard from "@/components/ui/core/ListingCard";
-import NMContainer from "@/components/ui/core/NMContainer";
-import { getAllListings } from "@/services/Listings";
+import { Slider } from "@/components/ui/slider";
 import { TRentalListing } from "@/types/listings";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
 type ListingWithId = TRentalListing & { _id: string };
 
@@ -137,14 +135,14 @@ const Bannar: React.FC<RentalListingsProps> = ({ initialListings }) => {
                   <div className="flex flex-col gap-2">
                     <Button
                       onClick={handleSearch}
-                      className="bg-[#0AA5CD] text-white hover:bg-black flex-1"
+                      className="bg-[#0AA5CD] hover:bg-[#088aa9]  text-white flex-1"
                     >
                       Search
                     </Button>
                     <Button
                       onClick={handleReset}
                       variant="outline"
-                      className="border-blue-300 text-blue-600"
+                      className="border-blue-300 text-[#0AA5CD] rounded-xl"
                     >
                       Reset
                     </Button>
