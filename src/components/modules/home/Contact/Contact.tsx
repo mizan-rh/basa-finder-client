@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
             <p className="text-xl font-semibold text-center text-gray-700 mb-6">
               Send Me a Message
             </p>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div>
                 <label
                   htmlFor="name"
@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
                 />
               </div>
 
-              <div className="text-center">
+              <div className="text-center mt-10">
                 <button
                   type="submit"
                   className="bg-[#0AA5CD] hover:bg-[#088aa9] text-white px-6 py-3 rounded-xl font-semibold transition duration-300"

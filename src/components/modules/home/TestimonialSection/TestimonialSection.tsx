@@ -71,7 +71,7 @@ const TestimonialSection = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <p className="text-gray-600 mb-4">{item.text}</p>
+            <p className="text-gray-600 mb-4 text-sm">{item.text}</p>
             <h3
               className="font-bold transition-colors duration-300"
               style={{ color: item.textColor }}
