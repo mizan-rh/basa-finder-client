@@ -15,7 +15,7 @@ import ListingCard from "@/components/ui/core/ListingCard";
 import NMContainer from "@/components/ui/core/NMContainer";
 import { getAllListings } from "@/services/Listings";
 import { TRentalListing } from "@/types/listings";
-import Link from "next/link";
+// import Link from "next/link";
 
 type ListingWithId = TRentalListing & { _id: string };
 
@@ -70,7 +70,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
   return (
     <NMContainer className="my-20">
       {/* Search Section */}
-      <div className="bg-white p-6 rounded-xl shadow-md mb-10">
+      <div className="bg-white p-6 rounded-xl mb-10">
         <h3 className="text-xl font-semibold mb-4 text-center">
           Search Rental Properties
         </h3>
@@ -146,17 +146,17 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
       </div>
 
       {/* Listings Header */}
-      <div className="flex items-center justify-between">
+      {/* <div className="flex items-center justify-between">
         <h2 className="text-3xl font-bold">All Listings</h2>
         <Link href="/listings">
           <Button variant="outline" className="rounded-full">
             View All
           </Button>
         </Link>
-      </div>
+      </div> */}
 
       {/* Listings Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-10 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 mt-10 px-10 py-8">
         {filteredListings.length > 0 ? (
           filteredListings.map((listing: ListingWithId, idx: number) => (
             <ListingCard

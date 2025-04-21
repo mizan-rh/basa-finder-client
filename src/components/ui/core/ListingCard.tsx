@@ -2,7 +2,7 @@ import Image from "next/image";
 // import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Heart } from "lucide-react";
-import { FaStar } from "react-icons/fa";
+// import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 interface ListingCardProps {
@@ -56,37 +56,39 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
                     <span className="text-2xl  text-[#0AA5CD]">
                       ৳{listing.rentAmount}
                     </span>
-                    <span> /</span>
-                    <span className="text-xs text-black">perday</span>{" "}
+                    {/* <span> /</span>
+                    <span className="text-xs text-black">
+                      {" "}
+                      {listing.bedrooms} Bedrooms
+                    </span>{" "} */}
                   </span>
                 </div>
                 {/* rating */}
-                <div className=" mt-3">
-                  {/* <span className="">{listing.bedrooms} Bedrooms</span> */}
-                  <div className="flex gap-1 text-[#0AA5CD]">
+                <div className="">
+                  <span className=" text-xs mt-3">
+                    {listing.bedrooms} Bedrooms
+                  </span>
+                  {/* <div className="flex gap-1 text-[#0AA5CD]">
                     <FaStar />
                     <FaStar />
                     <FaStar />
                     <FaStar />
                     <FaStar />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
             {/* tags */}
-            <div className=" bg-gray-200 rounded-md my-6">
-              <div className="grid grid-cols-3">
-                {listing.amenities.slice(0, 3).map((amenity, idx) => (
+            <div className="my-6">
+              <div className="flex gap-2 text-[10px] flex-wrap">
+                {listing.amenities.map((amenity, idx) => (
                   <span
                     key={idx}
-                    className="p-2 text-center font-semibold text-xs text-gray-500 border-r-2 border-white"
+                    className="bg-gray-200 px-4 py-1 rounded-2xl  "
                   >
                     {amenity}
                   </span>
                 ))}
-                {/* {listing.amenities.length > 3 && (
-              <span className="text-xs">+ more</span>
-            )} */}
               </div>
             </div>
             {/* location */}
