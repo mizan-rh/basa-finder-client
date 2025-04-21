@@ -64,7 +64,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
     <NMContainer className=" p-0">
       {/* Search Section */}
       <div className="lg:p-6 p-3 bg-white/70">
-        <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-4 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-4 gap-2">
           <div className="bg-white rounded-md">
             <Input
               placeholder="Enter location..."
@@ -135,7 +135,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
       <div className=" sticky z-30 bg-gray-100 rounded-2xl shadow-2xl">
         <div className=" ">
           {open ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-8 px-10 py-10 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8 !lg:p-20 px-10 py-10 ">
               {filteredListings.length > 0 ? (
                 filteredListings.map((listing: ListingWithId, idx: number) => (
                   <ListingCard
