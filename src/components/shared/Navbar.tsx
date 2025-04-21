@@ -89,7 +89,7 @@ const Navbar = () => {
               }`
         }
       >
-        <div className="container flex items-center justify-between mx-auto  px-4 lg:px-20">
+        <div className="container flex items-center justify-between mx-auto  px-4">
           {/* Logo - Responsive sizing */}
           <div>
             <Link href="/" className="flex items-center space-x-2">
@@ -136,56 +136,61 @@ const Navbar = () => {
             </Link> */}
 
             {/* User Authentication - Desktop */}
-            {user ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="rounded-full p-0 h-9 w-9">
-                    <Avatar className="h-9 w-9">
-                      <AvatarImage src="https://i.postimg.cc/QC0n0Jw6/user.jpg" />
-                      <AvatarFallback>
-                        {user.name?.charAt(0) || "U"}
-                      </AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56 bg-white">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="/profile"
-                      className="flex w-full cursor-pointer"
+            <div className="px-6">
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className="rounded-full p-0 h-9 w-9"
                     >
-                      <User className="mr-2 h-4 w-4" />
-                      My Profile
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href={`/${user.role}s/dashboard`}
-                      className="flex w-full cursor-pointer"
+                      <Avatar className="h-9 w-9">
+                        <AvatarImage src="https://i.postimg.cc/QC0n0Jw6/user.jpg" />
+                        <AvatarFallback>
+                          {user.name?.charAt(0) || "U"}
+                        </AvatarFallback>
+                      </Avatar>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-56 bg-white">
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link
+                        href="/profile"
+                        className="flex w-full cursor-pointer"
+                      >
+                        <User className="mr-2 h-4 w-4" />
+                        My Profile
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link
+                        href={`/${user.role}s/dashboard`}
+                        className="flex w-full cursor-pointer"
+                      >
+                        <LayoutDashboardIcon className="mr-2 h-4 w-4" />
+                        Dashboard
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                      onClick={handleLogOut}
+                      className="text-red-600 cursor-pointer"
                     >
-                      <LayoutDashboardIcon className="mr-2 h-4 w-4" />
-                      Dashboard
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem
-                    onClick={handleLogOut}
-                    className="text-red-600 cursor-pointer"
-                  >
-                    <LogOut className="mr-2 h-4 w-4" />
-                    Log Out
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Link href="/login">
-                <button className="text-[#0AA5CD] cursor-pointer">
-                  <FaRegCircleUser className=" text-2xl " />
-                </button>
-              </Link>
-            )}
+                      <LogOut className="mr-2 h-4 w-4" />
+                      Log Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link href="/login">
+                  <button className="text-[#0AA5CD] cursor-pointer">
+                    <FaRegCircleUser className=" text-2xl " />
+                  </button>
+                </Link>
+              )}
+            </div>
           </div>
 
           {/* Mobile Navigation Controls */}
