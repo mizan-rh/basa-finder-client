@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -19,11 +18,11 @@ import { TRentalListing } from "@/types/listings";
 
 type ListingWithId = TRentalListing & { _id: string };
 
-interface RentalListingsProps {
+interface FilteringProps {
   initialListings: ListingWithId[];
 }
 
-const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
+const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
   // State for search filters
   const [location, setLocation] = useState("");
   const [priceRange, setPriceRange] = useState([0, 50000]);
@@ -60,36 +59,24 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
   };
 
   // Reset all filters
-  const handleReset = () => {
-    setLocation("");
-    setPriceRange([0, 50000]);
-    setBedrooms("any");
-    setFilteredListings(initialListings);
-  };
-
+  const [open, setOpen] = useState(false);
   return (
-    <NMContainer className="my-20">
+    <NMContainer className=" p-0">
       {/* Search Section */}
-      <div className="bg-white p-6 rounded-xl mb-10">
-        <h3 className="text-xl font-semibold mb-4 text-center">
-          Search Rental Properties
-        </h3>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1">Location</label>
+      <div className="lg:p-6 p-3 bg-white/70">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-4 gap-2">
+          <div className="bg-white rounded-md">
             <Input
               placeholder="Enter location..."
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="w-full"
+              className="w-full h-full"
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Price Range
-            </label>
-            <div className="px-2 ">
+          <div className="bg-white rounded-md">
+            <div className="p-4 flex gap-4 justify-center items-center">
+              <span>৳{priceRange[0].toLocaleString()}</span>
               <Slider
                 defaultValue={[0, 50000]}
                 min={0}
@@ -97,50 +84,39 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
                 step={1000}
                 value={priceRange}
                 onValueChange={(value) => setPriceRange(value)}
-                className="mt-2 bg-[#0AA5CD]"
+                className=" bg-[#0AA5CD] rounded-3xl text-xs"
               />
-              <div className="flex justify-between mt-2 text-sm text-gray-600">
-                <span>৳{priceRange[0].toLocaleString()}</span>
-                <span>৳{priceRange[1].toLocaleString()}</span>
-              </div>
+              <span>৳{priceRange[1].toLocaleString()}</span>
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium mb-1">Bedrooms</label>
+          <div className="bg-white rounded-md">
             <Select
               value={bedrooms}
               onValueChange={(value) => setBedrooms(value)}
             >
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Any" />
+              <SelectTrigger className="w-full h-full">
+                <SelectValue placeholder="Bedromes" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="any">Any</SelectItem>
-                <SelectItem value="1">1</SelectItem>
-                <SelectItem value="2">2</SelectItem>
-                <SelectItem value="3">3</SelectItem>
-                <SelectItem value="4">4</SelectItem>
-                <SelectItem value="5">5+</SelectItem>
+              <SelectContent className="bg-gray-200">
+                <SelectItem value="any">Bedrooms</SelectItem>
+                <SelectItem value="1">1 Bedrooms</SelectItem>
+                <SelectItem value="2">2 Bedrooms</SelectItem>
+                <SelectItem value="3">3 Bedrooms</SelectItem>
+                <SelectItem value="4">4 Bedrooms</SelectItem>
+                <SelectItem value="5">5+ Bedrooms</SelectItem>
               </SelectContent>
             </Select>
           </div>
 
           {/* <div className="flex md:flex-row flex-col items-end gap-2"> */}
-          <div className="flex flex-col gap-2">
-            <Button
+          <div onClick={() => setOpen(true)} className="w-full ">
+            <button
               onClick={handleSearch}
-              className="bg-[#0AA5CD] text-white hover:bg-black flex-1"
+              className="bg-[#0AA5CD] w-full p-4 text-white rounded-md hover:bg-black flex-1 cursor-pointer"
             >
               Search
-            </Button>
-            <Button
-              onClick={handleReset}
-              variant="outline"
-              className="border-blue-300 text-blue-600"
-            >
-              Reset
-            </Button>
+            </button>
           </div>
         </div>
       </div>
@@ -156,36 +132,42 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
       </div> */}
 
       {/* Listings Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 mt-10 px-10 py-8">
-        {filteredListings.length > 0 ? (
-          filteredListings.map((listing: ListingWithId, idx: number) => (
-            <ListingCard
-              key={idx}
-              listing={{
-                id: listing._id,
-                location: listing.location,
-                rentAmount: listing.rentAmount,
-                bedrooms: listing.bedrooms,
-                amenities: listing.amenities,
-                description: listing.description,
-                images: listing.images,
-              }}
-            />
-          ))
-        ) : (
-          <div className="col-span-4 text-center py-10">
-            <p className="text-lg text-gray-500">
-              No listings match your search criteria.
-            </p>
-          </div>
-        )}
+      <div className=" sticky z-30 bg-gray-100 rounded-2xl shadow-2xl">
+        <div className=" ">
+          {open ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8 !lg:p-20 px-10 py-10 ">
+              {filteredListings.length > 0 ? (
+                filteredListings.map((listing: ListingWithId, idx: number) => (
+                  <ListingCard
+                    key={idx}
+                    listing={{
+                      id: listing._id,
+                      location: listing.location,
+                      rentAmount: listing.rentAmount,
+                      bedrooms: listing.bedrooms,
+                      amenities: listing.amenities,
+                      description: listing.description,
+                      images: listing.images,
+                    }}
+                  />
+                ))
+              ) : (
+                <div className="col-span-4 text-center py-10">
+                  <p className="text-lg text-gray-500">
+                    No listings match your search criteria.
+                  </p>
+                </div>
+              )}
+            </div>
+          ) : null}
+        </div>
       </div>
     </NMContainer>
   );
 };
 
 // This exports the page component with data fetching
-export default function RentalListingsPage() {
+export default function FilteringPage() {
   const [initialListings, setInitialListings] = useState<ListingWithId[]>([]);
 
   // Use useEffect to fetch data on the client side
@@ -203,5 +185,5 @@ export default function RentalListingsPage() {
     fetchData();
   }, []);
 
-  return <RentalListings initialListings={initialListings} />;
+  return <Filtering initialListings={initialListings} />;
 }

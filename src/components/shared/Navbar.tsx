@@ -4,8 +4,8 @@ import brand from "@/assets/images/brand/basaFinder-md.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useAppSelector } from "@/redux/hooks";
-import { orderedProductsSelector } from "@/redux/features/cartSlice";
+// import { useAppSelector } from "@/redux/hooks";
+// import { orderedProductsSelector } from "@/redux/features/cartSlice";
 import { useUser } from "@/context/UserContext";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -22,7 +22,7 @@ import {
   LogOut,
   User,
   LayoutDashboardIcon,
-  ShoppingCart,
+  // ShoppingCart,
   Menu,
 } from "lucide-react";
 import { logout } from "@/services/AuthService";
@@ -37,7 +37,7 @@ const Navbar = () => {
   //
   const { user, setIsLoading } = useUser();
   const router = useRouter();
-  const products = useAppSelector(orderedProductsSelector);
+  // const products = useAppSelector(orderedProductsSelector);
   const [isOpen, setIsOpen] = useState(false);
 
   // Add scroll event listener to apply shadow on scroll
@@ -89,7 +89,7 @@ const Navbar = () => {
               }`
         }
       >
-        <div className="container flex items-center justify-between mx-auto  px-4 md:px-20">
+        <div className="container flex items-center justify-between mx-auto  px-4">
           {/* Logo - Responsive sizing */}
           <div>
             <Link href="/" className="flex items-center space-x-2">
@@ -120,72 +120,77 @@ const Navbar = () => {
           {/*  */}
           <div className="flex  gap-4 md:gap-8">
             {/* Cart with responsive spacing */}
-            <Link href="/cart" className={`relative ${user ? "mt-1.5" : ""} `}>
+            {/* <Link href="/cart" className={`relative ${user ? "mt-1.5" : ""} `}>
               <button className=" flex items-center cursor-pointer bg-transparent text-[#0AA5CD] border-0 justify-center">
                 <ShoppingCart className=" " />
-                {/* {products?.length > 0 && (
+                {products?.length > 0 && (
                     <span className="absolute -top-1 -right-1 bg-red-500 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
                       {products.length > 9 ? "9+" : products.length}
                     </span>
                   )} */}
-                {/* static update on server */}
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-3 h-3 flex p-2 items-center justify-center">
+            {/* static update on server */}
+            {/* <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-3 h-3 flex p-2 items-center justify-center">
                   0
                 </span>
               </button>
-            </Link>
+            </Link> */}
 
             {/* User Authentication - Desktop */}
-            {user ? (
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" className="rounded-full p-0 h-9 w-9">
-                    <Avatar className="h-9 w-9">
-                      <AvatarImage src="https://i.postimg.cc/QC0n0Jw6/user.jpg" />
-                      <AvatarFallback>
-                        {user.name?.charAt(0) || "U"}
-                      </AvatarFallback>
-                    </Avatar>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56 bg-white">
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href="/profile"
-                      className="flex w-full cursor-pointer"
+            <div className="px-6">
+              {user ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className="rounded-full p-0 h-9 w-9"
                     >
-                      <User className="mr-2 h-4 w-4" />
-                      My Profile
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link
-                      href={`/${user.role}s/dashboard`}
-                      className="flex w-full cursor-pointer"
+                      <Avatar className="h-9 w-9">
+                        <AvatarImage src="https://i.postimg.cc/QC0n0Jw6/user.jpg" />
+                        <AvatarFallback>
+                          {user.name?.charAt(0) || "U"}
+                        </AvatarFallback>
+                      </Avatar>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-56 bg-white">
+                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem asChild>
+                      <Link
+                        href="/profile"
+                        className="flex w-full cursor-pointer"
+                      >
+                        <User className="mr-2 h-4 w-4" />
+                        My Profile
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <Link
+                        href={`/${user.role}s/dashboard`}
+                        className="flex w-full cursor-pointer"
+                      >
+                        <LayoutDashboardIcon className="mr-2 h-4 w-4" />
+                        Dashboard
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                      onClick={handleLogOut}
+                      className="text-red-600 cursor-pointer"
                     >
-                      <LayoutDashboardIcon className="mr-2 h-4 w-4" />
-                      Dashboard
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem
-                    onClick={handleLogOut}
-                    className="text-red-600 cursor-pointer"
-                  >
-                    <LogOut className="mr-2 h-4 w-4" />
-                    Log Out
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Link href="/login">
-                <button className="text-[#0AA5CD] cursor-pointer">
-                  <FaRegCircleUser className=" text-2xl " />
-                </button>
-              </Link>
-            )}
+                      <LogOut className="mr-2 h-4 w-4" />
+                      Log Out
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link href="/login">
+                  <button className="text-[#0AA5CD] cursor-pointer">
+                    <FaRegCircleUser className=" text-2xl " />
+                  </button>
+                </Link>
+              )}
+            </div>
           </div>
 
           {/* Mobile Navigation Controls */}
