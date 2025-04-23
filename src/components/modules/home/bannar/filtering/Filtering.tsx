@@ -4,11 +4,11 @@ import ListingCard from "@/components/ui/core/ListingCard";
 import NMContainer from "@/components/ui/core/NMContainer";
 import { Input } from "@/components/ui/input";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { getAllListings } from "@/services/Listings";
