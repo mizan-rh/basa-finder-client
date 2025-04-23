@@ -52,9 +52,11 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Contact</h3>
           <ul className="space-y-2 text-sm text-gray-300">
             <li>123 Rent Street, Apartment City</li>
-            <li>info@entox.com</li>
-            <li>+880 1234-567890</li>
-            <li>+880 9876-543210</li>
+            <li>basaindwe@gmail.com</li>
+
+            <li>+880 1914-163150</li>
+            <li>+880 1829-662328</li>
+            <li>+880 1994-361085</li>
           </ul>
         </div>
 
@@ -85,7 +87,7 @@ const Footer = () => {
           <FaGithub className="w-5 h-5 hover:text-[#0AA5CD] transition" />
         </div>
         <p className="text-sm text-gray-400">
-          © 2025 Entox. All rights reserved.
+          © 2025 Basa Finder. All rights reserved.
         </p>
       </div>
     </footer>

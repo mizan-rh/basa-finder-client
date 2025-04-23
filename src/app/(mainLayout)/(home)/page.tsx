@@ -1,8 +1,10 @@
+import Bannar from "@/components/modules/home/bannar/Bannar";
 import Contact from "@/components/modules/home/Contact/Contact";
 import HeroBanner from "@/components/modules/home/Herobanner/HeroBanner";
+import RentPropertySlider from "@/components/modules/home/PropertySlider/PropertySlider";
+import PopularLocations from "@/components/modules/home/PupolarLocation/PopularLocations";
 import RulesSection from "@/components/modules/home/RulesSection/RulesSection";
 import TestimonialSection from "@/components/modules/home/TestimonialSection/TestimonialSection";
-import Bannar from "@/components/modules/home/bannar/Bannar";
 
 const page = () => {
   return (
@@ -13,7 +15,13 @@ const page = () => {
         <Bannar />
       </div>
       <div className="">
+        <RentPropertySlider />
+      </div>
+      <div className="">
         <HeroBanner />
+      </div>
+      <div className="">
+        <PopularLocations />
       </div>
       <div className="">
         <RulesSection />

@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Input } from "@/components/ui/input";
-import { Slider } from "@/components/ui/slider";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import ListingCard from "@/components/ui/core/ListingCard";
 import NMContainer from "@/components/ui/core/NMContainer";
+import { Input } from "@/components/ui/input";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select";
+import { Slider } from "@/components/ui/slider";
 import { getAllListings } from "@/services/Listings";
 import { TRentalListing } from "@/types/listings";
+import React, { useEffect, useState } from "react";
 // import Link from "next/link";
 
 type ListingWithId = TRentalListing & { _id: string };
