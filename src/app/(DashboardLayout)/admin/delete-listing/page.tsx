@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import {
-  deleteListing,
-  getAllListings,
-} from "@/services/Listings";
+import { deleteListing, getAllListings } from "@/services/Listings";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -14,9 +11,9 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { toast } from "sonner";
-import {  Trash2, Loader2, XCircle } from "lucide-react";
+import { Trash2, Loader2, XCircle } from "lucide-react";
 import Modal from "@/components/ui/Modal";
-import { TRentalListing } from "@/types";
+import { TRentalListing } from "@/types/listings";
 
 const DeleteListings = () => {
   type ListingWithId = TRentalListing & { _id: string };

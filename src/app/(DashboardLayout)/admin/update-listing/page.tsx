@@ -12,7 +12,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Edit, Loader2 } from "lucide-react";
-import { TRentalListing } from "@/types";
+import { TRentalListing } from "@/types/listings";
 
 const DeleteListings = () => {
   const router = useRouter();
