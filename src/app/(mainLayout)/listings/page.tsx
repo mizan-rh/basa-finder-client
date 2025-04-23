@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import ListingCard from "@/components/ui/core/ListingCard";
+import NMContainer from "@/components/ui/core/NMContainer";
 import { Input } from "@/components/ui/input";
-import { Slider } from "@/components/ui/slider";
 import {
   Select,
   SelectContent,
@@ -11,10 +11,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import ListingCard from "@/components/ui/core/ListingCard";
-import NMContainer from "@/components/ui/core/NMContainer";
+import { Slider } from "@/components/ui/slider";
 import { getAllListings } from "@/services/Listings";
 import { TRentalListing } from "@/types/listings";
+import React, { useEffect, useState } from "react";
 
 // import Link from "next/link";
 
@@ -116,8 +116,10 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Any" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="any">Any</SelectItem>
+              <SelectContent className="bg-amber-500">
+                <SelectItem className="hover:bg-cyan-400" value="any">
+                  Any
+                </SelectItem>
                 <SelectItem value="1">1</SelectItem>
                 <SelectItem value="2">2</SelectItem>
                 <SelectItem value="3">3</SelectItem>
