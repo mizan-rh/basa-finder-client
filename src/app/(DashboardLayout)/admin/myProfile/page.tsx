@@ -1,5 +1,5 @@
-import ProfilePage from "@/app/(MainLayout)/profile/page";
-import React from "react";
+// import ProfilePage from "@/app/(MainLayout)/profile/page";
+import ProfilePage from "../../../(MainLayout)/profile/page";
 
 const MyProfile = () => {
   return (
