@@ -24,6 +24,7 @@ const Bannar: React.FC<RentalListingsProps> = ({ initialListings }) => {
   const [location, setLocation] = useState("");
   const [priceRange, setPriceRange] = useState([0, 50000]);
   const [bedrooms, setBedrooms] = useState("any");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [filteredListings, setFilteredListings] =
     useState<ListingWithId[]>(initialListings);
 

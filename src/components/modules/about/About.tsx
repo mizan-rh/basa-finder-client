@@ -30,7 +30,7 @@ const teamMembers = [
 
 const AboutUs = () => {
   return (
-    <div className="bg-gray-50 min-h-screen w-full mt-20">
+    <div className="bg-gray-50 min-h-screen w-full my-20">
       {/* Mission Section */}
       <section className="bg-white shadow">
         <div className="container mx-auto px-4 py-16 text-center flex justify-center items-center flex-col ">
@@ -112,7 +112,7 @@ const AboutUs = () => {
       </section>
 
       {/* Contact Info */}
-      <section className="bg-gradient-to-r from-[#0AA5CD] to-cyan-100 text-white py-16">
+      <section className="bg-[#0f172a] text-white py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-black mb-12">
             Contact Us
@@ -127,8 +127,9 @@ const AboutUs = () => {
             <div className="bg-white p-6 rounded-xl text-center text-black shadow">
               <Phone className="w-10 h-10 mx-auto mb-4 text-blue-600" />
               <h3 className="font-semibold text-lg mb-1">Phone</h3>
-              <p>+880 1234 567 890</p>
-              <p>+880 9876 543 210</p>
+              <p>+880 1914-163150</p>
+              <p>+880 1829-662328</p>
+              <p>+880 1994-361085</p>
             </div>
             <div className="bg-white p-6 rounded-xl text-center text-black shadow">
               <div className="flex justify-center space-x-4 mb-4 text-blue-600">
@@ -137,7 +138,7 @@ const AboutUs = () => {
                 <Twitter className="w-6 h-6 hover:text-[#0AA5CD]" />
               </div>
               <h3 className="font-semibold text-lg mb-1">Follow Us</h3>
-              <p>@BasaFinder</p>
+              <p>basainder@gmail.com</p>
             </div>
           </div>
         </div>
