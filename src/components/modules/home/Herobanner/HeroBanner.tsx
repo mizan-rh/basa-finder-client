@@ -43,12 +43,12 @@ const HeroBanner = () => {
             landlords reach the right people — securely, smartly, and easily.
           </p>
           <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
-            <Link href="/dashboard/landlord">
+            <Link href="/landlords/listings">
               <button className="bg-[#0AA5CD] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#088aa9] transition duration-300">
                 Post a Rental
               </button>
             </Link>
-            <Link href="/all-rentals">
+            <Link href="/listings">
               <button className="px-6 py-3 rounded-lg border-2 border-[#0AA5CD] text-[#0AA5CD] font-semibold hover:bg-[#0AA5CD] hover:text-white transition duration-300">
                 Browse Listings
               </button>
