@@ -1,15 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useUser } from "@/context/UserContext";
-import { useRouter } from "next/navigation";
-import { createListing } from "@/services/Listings";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { Loader2, XCircle } from "lucide-react";
-import Image from "next/image";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -17,8 +11,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useUser } from "@/context/UserContext";
+import { createListing } from "@/services/Listings";
+import { Loader2, XCircle } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const CreateRentalListing = () => {
   const { user } = useUser();
@@ -118,11 +118,11 @@ const CreateRentalListing = () => {
       for (const file of files) {
         const formData = new FormData();
         formData.append("file", file);
-        formData.append("upload_preset", "pxuxm8bg");
-        formData.append("cloud_name", "dd3w1s9gq");
+        formData.append("upload_preset", "image_uploads");
+        formData.append("cloud_name", "dw9zuuylj");
 
         const res = await fetch(
-          "https://api.cloudinary.com/v1_1/dd3w1s9gq/image/upload",
+          "https://api.cloudinary.com/v1_1/dw9zuuylj/image/upload",
           {
             method: "POST",
             body: formData,

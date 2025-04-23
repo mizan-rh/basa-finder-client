@@ -16,7 +16,8 @@ import {
 import { toast } from "sonner";
 import {  Trash2, Loader2, XCircle } from "lucide-react";
 import Modal from "@/components/ui/Modal";
-import { TRentalListing } from "@/types";
+import {  } from "@/types";
+import { TRentalListing } from "@/types/listings";
 
 const DeleteListings = () => {
   type ListingWithId = TRentalListing & { _id: string };

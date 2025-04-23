@@ -12,8 +12,9 @@ import {
   TableHead,
 } from "@/components/ui/table";
 import { Loader2 } from "lucide-react";
-import { IUser, TRentalListing } from "@/types";
+import { IUser } from "@/types";
 import { getSingleUser } from "@/services/Users";
+import { TRentalListing } from "@/types/listings";
 
 const ReviewListings = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

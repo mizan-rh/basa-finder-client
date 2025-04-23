@@ -1,7 +1,8 @@
 import ListingCard from "@/components/ui/core/ListingCard";
-import { TRentalListing } from "@/types";
+
 // import FilterSidebar from "./FilterSidebar";
 import FilterSidebar from "./filterSidebar";
+import { TRentalListing } from "@/types/listings";
 
 const AllListings = ({ listings }: { listings: TRentalListing[] }) => {
   return (

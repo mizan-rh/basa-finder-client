@@ -1,7 +1,7 @@
 import Image from "next/image";
 // import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Heart } from "lucide-react";
+import Link from "next/link";
 // import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
@@ -29,7 +29,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
                 listing.images[0].replace("http://", "https://") ||
                 "/placeholder.jpg"
               }
-              // src="https://res.cloudinary.com/dd3w1s9gq/image/upload/v1741706390/phmc6upqdltab6ncwwiv.jpg"
+              // src="https://res.cloudinary.com/dw9zuuylj/image/upload/v1741706390/phmc6upqdltab6ncwwiv.jpg"
 
               alt="Listing Image"
               layout="fill"
