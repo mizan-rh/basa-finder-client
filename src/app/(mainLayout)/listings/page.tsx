@@ -120,7 +120,9 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
                 <SelectItem className="hover:bg-cyan-400" value="any">
                   Any
                 </SelectItem>
-                <SelectItem value="1">1</SelectItem>
+                <SelectItem className="hover:bg-lime-300" value="1">
+                  1
+                </SelectItem>
                 <SelectItem value="2">2</SelectItem>
                 <SelectItem value="3">3</SelectItem>
                 <SelectItem value="4">4</SelectItem>
