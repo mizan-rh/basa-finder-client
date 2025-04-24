@@ -32,7 +32,7 @@ const PopularLocations = () => {
         Popular Locations
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:mr-16 ">
         <div className="md:row-span-2 relative aspect-[3/4] overflow-hidden rounded-lg">
           <Image
             src={locations[0].image}

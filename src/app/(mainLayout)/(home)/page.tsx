@@ -23,7 +23,7 @@ const page = () => {
       <div className="px-4 md:px-16">
         <PopularLocations />
       </div>
-      <div className="px-4 md:px-16">
+      <div className="">
         <RulesSection />
       </div>
 

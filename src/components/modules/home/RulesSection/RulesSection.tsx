@@ -11,7 +11,7 @@ import {
 
 const RulesSection = () => {
   return (
-    <section className="relative w-full min-h-screen">
+    <section className="relative w-full ">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -23,7 +23,7 @@ const RulesSection = () => {
       </div>
 
       {/* Overlay Content */}
-      <div className="container mx-auto px-4 md:px-10 py-16 text-white">
+      <div className="container mx-auto px-4 md:px-20 py-16 text-white">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 py-10">
           {/* Left Text Content */}
           <div className="space-y-6 text-center lg:text-left">
@@ -59,7 +59,7 @@ const RulesSection = () => {
       </div>
 
       {/* Stats Section */}
-      <div className="bg-[#0c1a2b] relative lg:absolute left-4 right-4 bottom-0 lg:bottom-[-80px] text-white py-8 px-4 sm:px-8 w-[95%] mx-auto rounded-lg shadow-lg">
+      <div className="bg-[#0aa5cd] relative  shadow-2xl p-6 text-white">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
             <FaHome className="text-3xl mx-auto mb-2" />
