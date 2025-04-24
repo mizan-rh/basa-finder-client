@@ -36,7 +36,7 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
     <NMContainer className=" p-0">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={24}
+        spaceBetween={34}
         slidesPerView={3}
         slidesPerGroup={1}
         navigation
@@ -46,7 +46,7 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className=""
+        className="px-20"
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -60,10 +60,7 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
         }}
       >
         {filteredListings.map((listing: ListingWithId, idx: number) => (
-          <SwiperSlide
-            className="my-20 lg:px-4 !mr-0 ml-4 md:ml-5"
-            key={listing._id}
-          >
+          <SwiperSlide className="my-20" key={listing._id}>
             <ListingCard
               key={idx}
               listing={{

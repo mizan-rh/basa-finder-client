@@ -144,7 +144,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
           <div onClick={() => setOpen(true)} className="w-full ">
             <button
               onClick={handleSearch}
-              className="bg-[#0AA5CD] w-full p-4 text-white rounded-md hover:bg-black flex-1 cursor-pointer"
+              className="bg-[#0AA5CD] w-full p-4 text-white rounded-md hover:bg-black flex-1 cursor-pointer transition duration-300"
             >
               Search
             </button>
@@ -206,7 +206,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
                 {/* Listings Header */}
                 <div className="text-center">
                   <Link href="/listings">
-                    <button className="rounded px-4 py-2 text-white font-bold cursor-pointer bg-[#0aa5cd] hover:bg-black transform-border">
+                    <button className="rounded px-4 py-2 text-white font-bold cursor-pointer bg-[#0aa5cd] hover:bg-black transition duration-300">
                       View All
                     </button>
                   </Link>

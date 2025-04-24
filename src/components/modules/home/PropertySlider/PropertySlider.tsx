@@ -11,11 +11,11 @@ import SliderCardPage from "./SliderCard";
 
 const RentPropertySlider = () => {
   return (
-    <section className="max-w-7xl mx-auto md:px-4 py-16">
-      <p className="text-sm uppercase tracking-widest text-[#0AA5CD] mb-2">
+    <section className="max-w-7xl mx-auto px-4 lg:px-16 py-16">
+      <p className="text-sm uppercase md:px-16 px-4 tracking-widest text-[#0AA5CD] mb-2">
         Browse Hot Offers
       </p>
-      <h2 className="text-4xl font-bold text-gray-800 mb-10">
+      <h2 className="text-4xl font-bold text-gray-800 mb-10 md:px-16 px-4">
         Explore Rent Property
       </h2>
 
