@@ -98,6 +98,7 @@ const RentPropertySlider = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
+        className="px-20"
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -112,7 +113,7 @@ const RentPropertySlider = () => {
       >
         {properties.map((property) => (
           <SwiperSlide key={property.id}>
-            <div className="rounded-lg overflow-hidden shadow-lg bg-white">
+            <div className="rounded-lg overflow-hidden shadow-lg lg:my-10 bg-white cursor-pointer">
               <div className="relative h-52 w-full">
                 <Image
                   src={property.image}
