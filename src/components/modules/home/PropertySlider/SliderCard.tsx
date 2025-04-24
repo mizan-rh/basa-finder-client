@@ -70,7 +70,7 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="mx-20"
+        className=""
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -84,7 +84,7 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
         }}
       >
         {filteredListings.map((listing: ListingWithId, idx: number) => (
-          <SwiperSlide className="my-20 lg:px-4" key={listing.id}>
+          <SwiperSlide className="my-20 lg:px-4 !mr-0 ml-5" key={listing.id}>
             <ListingCard
               key={idx}
               listing={{
