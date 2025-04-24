@@ -1,14 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableRow,
-  TableHead,
-  TableCell,
-} from "@/components/ui/table";
+import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
@@ -16,10 +8,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { getAllUsers, updateUserRole } from "@/services/Admin"; // Adjust import path as needed
-import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 // Define interface for user data
 interface User {
@@ -145,9 +145,24 @@ const UsersRoleManagementPage = () => {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent className="bg-white">
-                        <SelectItem value="admin">Admin</SelectItem>
-                        <SelectItem value="landlord">Landlord</SelectItem>
-                        <SelectItem value="tenant">Tenant</SelectItem>
+                        <SelectItem
+                          className="hover:bg-neutral-800 hover:text-white"
+                          value="admin"
+                        >
+                          Admin
+                        </SelectItem>
+                        <SelectItem
+                          className="hover:bg-neutral-800 hover:text-white"
+                          value="landlord"
+                        >
+                          Landlord
+                        </SelectItem>
+                        <SelectItem
+                          className="hover:bg-neutral-800 hover:text-white"
+                          value="tenant"
+                        >
+                          Tenant
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                   </TableCell>

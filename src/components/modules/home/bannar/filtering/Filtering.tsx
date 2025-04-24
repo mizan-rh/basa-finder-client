@@ -64,7 +64,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
   return (
     <NMContainer className=" p-0">
       {/* Search Section */}
-      <div className="lg:p-6 p-3 bg-white/70">
+      <div className="lg:p-6 p-3 bg-white/20 rounded-md">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-4 gap-2">
           <div className="bg-white rounded-md">
             <Input
@@ -99,13 +99,43 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
               <SelectTrigger className="w-full h-full">
                 <SelectValue placeholder="Bedromes" />
               </SelectTrigger>
-              <SelectContent className="bg-white"> className="bg-gray-200">
-                <SelectItem value="any">Bedrooms</SelectItem>
-                <SelectItem value="1">1 Bedrooms</SelectItem>
-                <SelectItem value="2">2 Bedrooms</SelectItem>
-                <SelectItem value="3">3 Bedrooms</SelectItem>
-                <SelectItem value="4">4 Bedrooms</SelectItem>
-                <SelectItem value="5">5+ Bedrooms</SelectItem>
+              <SelectContent className="bg-gray-50">
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="any"
+                >
+                  Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="1"
+                >
+                  1 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="2"
+                >
+                  2 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="3"
+                >
+                  3 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="4"
+                >
+                  4 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="5"
+                >
+                  5+ Bedrooms
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>

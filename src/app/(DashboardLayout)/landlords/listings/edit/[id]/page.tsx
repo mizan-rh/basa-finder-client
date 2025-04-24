@@ -1,13 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
-import { getSingleListing, updateListing } from "@/services/Listings";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { Loader2, XCircle, UploadCloud } from "lucide-react";
-import Image from "next/image";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -17,6 +11,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { getSingleListing, updateListing } from "@/services/Listings";
+import { Loader2, UploadCloud, XCircle } from "lucide-react";
+import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 // Available amenities options
 const amenitiesOptions = [
@@ -300,10 +300,30 @@ const EditListing = () => {
               </SelectTrigger>
               <SelectContent className="bg-white">
                 {/* <SelectItem value="0">Studio</SelectItem> */}
-                <SelectItem value="1">1 Bedroom</SelectItem>
-                <SelectItem value="2">2 Bedrooms</SelectItem>
-                <SelectItem value="3">3 Bedrooms</SelectItem>
-                <SelectItem value="4">4+ Bedrooms</SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="1"
+                >
+                  1 Bedroom
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="2"
+                >
+                  2 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="3"
+                >
+                  3 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="4"
+                >
+                  4+ Bedrooms
+                </SelectItem>
               </SelectContent>
             </Select>
             {errors.bedrooms && (

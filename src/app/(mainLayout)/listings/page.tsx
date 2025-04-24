@@ -116,13 +116,43 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Bedromes" />
               </SelectTrigger>
-              <SelectContent className="bg-white"> className="bg-gray-200">
-                <SelectItem value="any">Bedrooms</SelectItem>
-                <SelectItem value="1">1 Bedrooms</SelectItem>
-                <SelectItem value="2">2 Bedrooms</SelectItem>
-                <SelectItem value="3">3 Bedrooms</SelectItem>
-                <SelectItem value="4">4 Bedrooms</SelectItem>
-                <SelectItem value="5">5+ Bedrooms</SelectItem>
+              <SelectContent className="bg-gray-50">
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="any"
+                >
+                  Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="1"
+                >
+                  1 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="2"
+                >
+                  2 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="3"
+                >
+                  3 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="4"
+                >
+                  4 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  value="5"
+                >
+                  5+ Bedrooms
+                </SelectItem>
               </SelectContent>
             </Select>
           </div>
