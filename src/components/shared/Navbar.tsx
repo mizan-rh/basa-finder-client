@@ -109,7 +109,9 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className={`text-sm lg:text-base ${
-                    pathname === link.href ? "text-[#0AA5CD]" : ""
+                    pathname === link.href
+                      ? "text-[#0AA5CD]"
+                      : "hover:text-[#0AA5CD]"
                   }`}
                 >
                   {link.name}
@@ -140,7 +142,10 @@ const Navbar = () => {
                   <DropdownMenuContent align="end" className="w-56 bg-white">
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem asChild>
+                    <DropdownMenuItem
+                      className="hover:bg-[#0aa5cd] hover:text-white transition decoration-300"
+                      asChild
+                    >
                       <Link
                         href="/profile"
                         className="flex w-full cursor-pointer"
@@ -149,7 +154,10 @@ const Navbar = () => {
                         My Profile
                       </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
+                    <DropdownMenuItem
+                      className="hover:bg-[#0aa5cd] hover:text-white transition decoration-300"
+                      asChild
+                    >
                       <Link
                         href={`/${user.role}s/dashboard`}
                         className="flex w-full cursor-pointer"

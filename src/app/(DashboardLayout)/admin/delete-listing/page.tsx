@@ -137,7 +137,11 @@ const DeleteListings = () => {
           </p>
 
           <div className="flex justify-center gap-4 mt-6">
-            <Button variant="outline" onClick={() => setDeleteModalOpen(false)}>
+            <Button
+              className="transition duration-300"
+              variant="outline"
+              onClick={() => setDeleteModalOpen(false)}
+            >
               Cancel
             </Button>
             <Button

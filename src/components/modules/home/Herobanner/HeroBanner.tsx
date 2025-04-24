@@ -44,7 +44,7 @@ const HeroBanner = () => {
           </p>
           <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
             <Link href="/landlords/listings">
-              <button className="bg-[#0AA5CD] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#088aa9] transition duration-300">
+              <button className="bg-[#0AA5CD] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#000] transition duration-300">
                 Post a Rental
               </button>
             </Link>

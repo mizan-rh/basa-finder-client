@@ -1,8 +1,15 @@
-'use client'
+"use client";
 
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Table, TableHead, TableRow, TableHeader, TableBody, TableCell } from "@/components/ui/table";
+import {
+  Table,
+  TableHead,
+  TableRow,
+  TableHeader,
+  TableBody,
+  TableCell,
+} from "@/components/ui/table";
 import { Loader2 } from "lucide-react";
 import { getMyPayments } from "@/services/Payments";
 
@@ -40,7 +47,6 @@ interface PaymentResponse {
   };
 }
 
-
 const PaymentHistory = () => {
   const [payments, setPayments] = useState<Payment[]>([]);
   const [loading, setLoading] = useState(true);
@@ -67,8 +73,10 @@ const PaymentHistory = () => {
   }, []);
 
   return (
-    <div className="p-6">
-      <h2 className="text-xl font-bold mb-4 text-center md:text-2xl">Payment History</h2>
+    <div className="">
+      <h2 className="text-xl font-bold mb-4 text-center md:text-2xl">
+        Payment History
+      </h2>
       {loading ? (
         <div className="flex justify-center items-center">
           <Loader2 className="w-6 h-6 animate-spin" />
@@ -78,10 +86,10 @@ const PaymentHistory = () => {
       ) : payments.length === 0 ? (
         <p className="text-center md:text-xl">No payments found.</p>
       ) : (
-        <Card>
-          <CardContent>
+        <Card className="bg-white">
+          <CardContent className="!p-0 rounded-md">
             <Table>
-              <TableHeader>
+              <TableHeader className="bg-gray-50 pt-3">
                 <TableRow>
                   <TableHead>Name</TableHead>
                   <TableHead>Address</TableHead>
@@ -103,7 +111,9 @@ const PaymentHistory = () => {
                     <TableCell>${payment.amount}</TableCell>
                     <TableCell>{payment.transaction.method}</TableCell>
                     <TableCell>{payment.status}</TableCell>
-                    <TableCell>{new Date(payment.createdAt).toLocaleDateString()}</TableCell>
+                    <TableCell>
+                      {new Date(payment.createdAt).toLocaleDateString()}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>

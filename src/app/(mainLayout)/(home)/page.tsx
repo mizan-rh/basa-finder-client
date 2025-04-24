@@ -18,7 +18,7 @@ const page = () => {
         <PopularLocations />
       </div>
       {/* populer items list dynamic */}
-      <div className="px-4 md:px-16">
+      <div className="">
         <RentPropertySlider />
       </div>{" "}
       {/* add why couse us static  */}
