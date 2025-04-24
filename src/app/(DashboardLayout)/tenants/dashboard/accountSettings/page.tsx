@@ -1,11 +1,11 @@
-import UpdateProfile from "@/app/(MainLayout)/update-profile/page"
+import UpdateProfile from "@/app/(MainLayout)/update-profile/page";
 
 const AccountSettings = () => {
   return (
     <div>
-        <UpdateProfile />
+      <UpdateProfile />
     </div>
-  )
-}
+  );
+};
 
-export default AccountSettings
+export default AccountSettings;

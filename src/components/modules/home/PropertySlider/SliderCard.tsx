@@ -62,7 +62,7 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
         {filteredListings.map((listing: ListingWithId, idx: number) => (
           <SwiperSlide
             className="my-20 lg:px-4 !mr-0 ml-4 md:ml-5"
-            key={listing.id}
+            key={listing._id}
           >
             <ListingCard
               key={idx}

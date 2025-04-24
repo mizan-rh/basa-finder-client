@@ -1,5 +1,4 @@
 import RentalListingsPage from "@/app/(MainLayout)/listings/page";
-import React from "react";
 
 const ListingsPage = () => {
   return (

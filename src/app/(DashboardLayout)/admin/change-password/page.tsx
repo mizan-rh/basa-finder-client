@@ -1,5 +1,4 @@
-import ChangePassword from '@/app/(MainLayout)/change-password/page'
-
+import ChangePassword from "@/app/(MainLayout)/change-password/page";
 
 const changePasswordPage = () => {
   return (
