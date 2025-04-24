@@ -21,7 +21,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
   return (
     <>
       <Link href={`/listings/${listing?.id}`} passHref>
-        <div className="bg-white rounded-xl shadow-2xl">
+        <div className="bg-white rounded-xl shadow-2xl h-[450px]">
           {/* image block */}
           <div className="relative w-full h-56 ">
             <Image

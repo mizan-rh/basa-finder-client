@@ -1,80 +1,13 @@
 "use client";
 
-import image1 from "@/assets/images/image/home-1.jpg";
-import image2 from "@/assets/images/image/home-2.jpg";
-import image3 from "@/assets/images/image/home-3.jpg";
-import image4 from "@/assets/images/image/home-4.jpg";
-
-import Image from "next/image";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import Image from "next/image";
+// import { Autoplay, Navigation, Pagination } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-const properties = [
-  {
-    id: 1,
-    title: "Yolo Happy House",
-    price: 30,
-    location: "New York",
-    area: "30 m2",
-    type: "Mountain",
-    bed: "3 bed",
-    image: image1,
-  },
-  {
-    id: 2,
-    title: "Family House",
-    price: 30,
-    location: "San Diego",
-    area: "30 m2",
-    type: "City",
-    bed: "4 bed",
-    image: image2,
-  },
-  {
-    id: 3,
-    title: "House of the Star",
-    price: 30,
-    location: "New York",
-    area: "40 m2",
-    type: "Mountain",
-    bed: "1 bed",
-    image: image3,
-  },
-  {
-    id: 4,
-    title: "Room Luxury",
-    price: 50,
-    location: "Los Angeles",
-    area: "40 m2",
-    type: "River",
-    bed: "2 bed",
-    image: image4,
-  },
-  {
-    id: 5,
-    title: "Room Luxury",
-    price: 50,
-    location: "Los Angeles",
-    area: "40 m2",
-    type: "River",
-    bed: "2 bed",
-    image: image4,
-  },
-  {
-    id: 6,
-    title: "Room Luxury",
-    price: 50,
-    location: "Los Angeles",
-    area: "40 m2",
-    type: "River",
-    bed: "2 bed",
-    image: image4,
-  },
-];
+import SliderCardPage from "./SliderCard";
 
 const RentPropertySlider = () => {
   return (
@@ -86,7 +19,7 @@ const RentPropertySlider = () => {
         Explore Rent Property
       </h2>
 
-      <Swiper
+      {/* <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={24}
         slidesPerView={3}
@@ -98,7 +31,6 @@ const RentPropertySlider = () => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="px-20"
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -113,7 +45,7 @@ const RentPropertySlider = () => {
       >
         {properties.map((property) => (
           <SwiperSlide key={property.id}>
-            <div className="rounded-lg overflow-hidden shadow-lg lg:my-10 bg-white cursor-pointer">
+            <div className="rounded-lg overflow-hidden shadow-lg bg-white">
               <div className="relative h-52 w-full">
                 <Image
                   src={property.image}
@@ -145,7 +77,8 @@ const RentPropertySlider = () => {
             </div>
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper> */}
+      <SliderCardPage />
     </section>
   );
 };
