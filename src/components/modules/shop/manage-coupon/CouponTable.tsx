@@ -2,8 +2,7 @@
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { NMTable } from "@/components/ui/core/NMTable/index";
-import { IProduct } from "@/types";
-import { IMeta } from "@/types/meta";
+import { IMeta, IProduct } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
 import { Edit, Eye, Trash } from "lucide-react";
 import Image from "next/image";

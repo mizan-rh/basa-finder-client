@@ -30,9 +30,9 @@ const teamMembers = [
 
 const AboutUs = () => {
   return (
-    <div className="bg-gray-50 min-h-screen w-full my-20">
+    <div className="bg-gray-50 min-h-screen w-full p-y ">
       {/* Mission Section */}
-      <section className="bg-white shadow">
+      <section className="bg-white shadow px-4 md:px-20">
         <div className="container mx-auto px-4 py-16 text-center flex justify-center items-center flex-col ">
           <motion.div
             className="flex justify-center mb-6"
@@ -66,7 +66,7 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 px-4 md:px-20">
         <div className="container mx-auto px-4">
           <motion.p
             className="text-base md:text-lsm text-[#0AA5CD]  text-center leading-relaxed"
@@ -87,7 +87,7 @@ const AboutUs = () => {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
-                className="rounded-xl shadow-md p-6 text-center hover:scale-105 transition-transform"
+                className="rounded-xl bg-white shadow-md p-6 text-center hover:scale-105 transition-transform"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -112,7 +112,7 @@ const AboutUs = () => {
       </section>
 
       {/* Contact Info */}
-      <section className="bg-[#0f172a] text-white py-16">
+      <section className=" text-white py-16 px-4 md:px-20">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-black mb-12">
             Contact Us

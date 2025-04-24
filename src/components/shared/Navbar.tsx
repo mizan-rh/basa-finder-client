@@ -72,9 +72,8 @@ const Navbar = () => {
 
     // add more menu if work onther routes
 
-    ...(user?.role === "admin"
-      ? [{ name: "Dashboard", href: `/${user.role}/dashboard` }]
-      : [{ name: "Dashboard", href: `/${user?.role}s/dashboard` }]),
+    // ...(user ? [{ name: "Dashboard", href: `/${user.role}s/dashboard` }] : []),
+    ...(user ? [{ name: "Dashboard", href: `/${user.role}s/dashboard` }] : []),
   ];
 
   return (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 // import { Button } from "@/components/ui/button";
-import { Heart } from "lucide-react";
 import Link from "next/link";
+import { Heart } from "lucide-react";
 // import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
@@ -21,7 +21,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
   return (
     <>
       <Link href={`/listings/${listing?.id}`} passHref>
-        <div className="bg-white rounded-xl shadow-2xl">
+        <div className="bg-white rounded-xl shadow-2xl h-[450px]">
           {/* image block */}
           <div className="relative w-full h-56 ">
             <Image
@@ -29,7 +29,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
                 listing.images[0].replace("http://", "https://") ||
                 "/placeholder.jpg"
               }
-              // src="https://res.cloudinary.com/dw9zuuylj/image/upload/v1741706390/phmc6upqdltab6ncwwiv.jpg"
+              // src="https://res.cloudinary.com/dd3w1s9gq/image/upload/v1741706390/phmc6upqdltab6ncwwiv.jpg"
 
               alt="Listing Image"
               layout="fill"
@@ -81,7 +81,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
             {/* tags */}
             <div className="my-6">
               <div className="flex gap-2 text-[10px] flex-wrap">
-                {listing.amenities.map((amenity, idx) => (
+                {listing.amenities.slice(0, 3).map((amenity, idx) => (
                   <span
                     key={idx}
                     className="bg-gray-200 px-4 py-1 rounded-2xl  "

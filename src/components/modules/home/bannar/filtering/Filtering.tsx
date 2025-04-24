@@ -4,15 +4,16 @@ import ListingCard from "@/components/ui/core/ListingCard";
 import NMContainer from "@/components/ui/core/NMContainer";
 import { Input } from "@/components/ui/input";
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { getAllListings } from "@/services/Listings";
 import { TRentalListing } from "@/types/listings";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 // import Link from "next/link";
 
@@ -132,25 +133,36 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
       </div> */}
 
       {/* Listings Grid */}
-      <div className=" sticky z-30 bg-gray-100 rounded-2xl shadow-2xl">
-        <div className=" ">
-          {open ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8 !lg:p-20 px-10 py-10 ">
+      {open ? (
+        <div className=" sticky z-30 bg-gray-100 rounded-2xl shadow-2xl my-10">
+          <div className=" relative ">
+            <div
+              onClick={() => {
+                setOpen(false);
+              }}
+              className="text-xl text-end px-8 py-6 cursor-pointer"
+            >
+              {" "}
+              x
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 !lg:p-20 pt-0 px-10 pb-10">
               {filteredListings.length > 0 ? (
-                filteredListings.map((listing: ListingWithId, idx: number) => (
-                  <ListingCard
-                    key={idx}
-                    listing={{
-                      id: listing._id,
-                      location: listing.location,
-                      rentAmount: listing.rentAmount,
-                      bedrooms: listing.bedrooms,
-                      amenities: listing.amenities,
-                      description: listing.description,
-                      images: listing.images,
-                    }}
-                  />
-                ))
+                filteredListings
+                  .slice(0, 6)
+                  .map((listing: ListingWithId, idx: number) => (
+                    <ListingCard
+                      key={idx}
+                      listing={{
+                        id: listing._id,
+                        location: listing.location,
+                        rentAmount: listing.rentAmount,
+                        bedrooms: listing.bedrooms,
+                        amenities: listing.amenities,
+                        description: listing.description,
+                        images: listing.images,
+                      }}
+                    />
+                  ))
               ) : (
                 <div className="col-span-4 text-center py-10">
                   <p className="text-lg text-gray-500">
@@ -159,9 +171,21 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
                 </div>
               )}
             </div>
-          ) : null}
+            {filteredListings.length > 6 && (
+              <div className="py-4 ">
+                {/* Listings Header */}
+                <div className="text-center">
+                  <Link href="/listings">
+                    <button className="rounded px-4 py-2 text-white font-bold cursor-pointer bg-[#0aa5cd] hover:bg-black transform-border">
+                      View All
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      ) : null}
     </NMContainer>
   );
 };

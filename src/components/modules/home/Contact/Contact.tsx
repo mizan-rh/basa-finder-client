@@ -1,11 +1,8 @@
 "use client";
 
 import animationData from "@/assets/lottie.json";
-import dynamic from "next/dynamic";
+import Lottie from "lottie-react";
 import React, { useState } from "react";
-
-// Dynamically import Lottie with SSR disabled
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const Contact: React.FC = () => {
   const [result, setResult] = useState<string>("");
@@ -32,8 +29,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="w-full my-20">
-      <div className="container mx-auto">
+    <section className="w-full ">
+      <div className="container mx-auto ">
         <p className="text-sm uppercase tracking-widest text-[#0AA5CD] text-center">
           BASA FINDER
         </p>
@@ -41,7 +38,7 @@ const Contact: React.FC = () => {
           Contact Me
         </h2>
 
-        <div className="mt-12 p-10 bg-[#0f172a] rounded-2xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+        <div className="mt-12  p-10 bg-gray-100 rounded-2xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12 px-4 md:px-16">
           {/* Form Section */}
           <div className="w-full lg:w-1/2 bg-white p-6 md:p-10 rounded-2xl shadow-2xl">
             <p className="text-xl font-semibold text-center text-gray-700 mb-6">
@@ -116,7 +113,7 @@ const Contact: React.FC = () => {
 
           {/* Animation Section */}
           <div className="w-full lg:w-1/2 max-w-[500px]">
-            <Lottie animationData={animationData} className="w-full h-full" />
+            <Lottie animationData={animationData} className="w-full h-full " />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 "use client";
-
+import { ICategory } from "@/types";
 import CreateCategoryModal from "./CreateCategoryModal";
 import { NMTable } from "@/components/ui/core/NMTable";
 import { ColumnDef } from "@tanstack/react-table";
@@ -9,7 +9,6 @@ import { useState } from "react";
 import DeleteConfirmationModal from "@/components/ui/core/NMModal/DeleteConfirmationModal";
 import { toast } from "sonner";
 import { deleteCategory } from "@/services/Category";
-import { ICategory } from "@/types/category";
 
 type TCategoriesProps = {
   categories: ICategory[];

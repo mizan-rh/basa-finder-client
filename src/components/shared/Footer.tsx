@@ -1,16 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import { FaGithub, FaGoogle, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-[#0f172a] text-white py-16 px-4">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:px-16">
         {/* Logo & Description */}
         <div>
-          <h2 className="text-2xl font-bold text-[#0AA5CD] mb-4">
-            BASA FINDER
-          </h2>
+          <Link
+            href="/"
+            className="text-2xl font-bold capitalize text-[#0AA5CD] mb-4"
+          >
+            basa finder
+          </Link>
           <p className="text-sm text-gray-300 mb-4">
             A complete solution to help you manage your rental properties
             efficiently and effectively.
@@ -25,24 +29,34 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Explore</h3>
           <ul className="space-y-2 text-sm text-gray-300">
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/" className="hover:underline">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/listings" className="hover:underline">
+                All Listing
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" className="hover:underline">
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                Services
-              </a>
+              <Link href="/terms-of-use" className="hover:underline">
+                Terms Of Use
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <Link href="/privacy-policy" className="hover:underline">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="hover:underline">
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -52,7 +66,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Contact</h3>
           <ul className="space-y-2 text-sm text-gray-300">
             <li>123 Rent Street, Apartment City</li>
-            <li>basaindwe@gmail.com</li>
+            <li>basafinder25@gmail.com</li>
 
             <li>+880 1914-163150</li>
             <li>+880 1829-662328</li>

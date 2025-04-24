@@ -1,17 +1,10 @@
-import { addCoupon } from "@/services/cart";
-
-import { IProduct } from "@/types";
+import IProduct from "@/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { addCoupon } from "@/services/cart";
 
 export interface CartProduct extends IProduct {
-  stock: number;
-  name: string;
-  imageUrls: string[];
   orderQuantity: number;
-  price: number;
-  offerPrice: number;
-  _id: string;
 }
 
 interface InitialState {

@@ -1,7 +1,13 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import { useRouter, useParams } from "next/navigation";
+import { getSingleListing, updateListing } from "@/services/Listings";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { Loader2, XCircle, UploadCloud } from "lucide-react";
+import Image from "next/image";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -11,12 +17,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { getSingleListing, updateListing } from "@/services/Listings";
-import { Loader2, UploadCloud, XCircle } from "lucide-react";
-import Image from "next/image";
-import { useParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { toast } from "sonner";
 
 // Available amenities options
 const amenitiesOptions = [
@@ -131,11 +131,11 @@ const EditListing = () => {
       for (const file of files) {
         const formData = new FormData();
         formData.append("file", file);
-        formData.append("upload_preset", "image_uploads");
-        formData.append("cloud_name", "dw9zuuylj");
+        formData.append("upload_preset", "pxuxm8bg");
+        formData.append("cloud_name", "dd3w1s9gq");
 
         const res = await fetch(
-          "https://api.cloudinary.com/v1_1/dw9zuuylj/image/upload",
+          "https://api.cloudinary.com/v1_1/dd3w1s9gq/image/upload",
           {
             method: "POST",
             body: formData,

@@ -14,7 +14,6 @@ import {
 import { Edit, Loader2 } from "lucide-react";
 import { TRentalListing } from "@/types/listings";
 
-
 const DeleteListings = () => {
   const router = useRouter();
   type ListingWithId = TRentalListing & { _id: string };

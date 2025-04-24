@@ -72,7 +72,7 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
   };
 
   return (
-    <Card className="container mx-auto my-10 p-6 bg-white border-0 rounded-2xl shadow-2xl">
+    <Card className="container mx-auto my-10 p-6 bg-white grid md:grid-cols-2 border-0 rounded-2xl hover:shadow-2xl cursor-pointer">
       {/* Swiper for Listing Images */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}

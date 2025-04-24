@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { IProduct } from "@/types/product";
-
+import { IProduct } from "@/types";
 import { Star } from "lucide-react";
 import Image from "next/image";
 
