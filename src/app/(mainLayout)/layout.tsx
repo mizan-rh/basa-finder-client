@@ -12,7 +12,7 @@ const layout = ({
       {/* navbar */}
       <Navbar />
       {/* main content */}
-      <div className=" min-h-screen ">{children}</div>
+      <div className=" min-h-screen">{children}</div>
       {/* footer */}
       <Footer />
     </div>

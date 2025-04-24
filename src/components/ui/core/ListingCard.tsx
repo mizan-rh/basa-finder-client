@@ -81,7 +81,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
             {/* tags */}
             <div className="my-6">
               <div className="flex gap-2 text-[10px] flex-wrap">
-                {listing.amenities.map((amenity, idx) => (
+                {listing.amenities.slice(0, 3).map((amenity, idx) => (
                   <span
                     key={idx}
                     className="bg-gray-200 px-4 py-1 rounded-2xl  "

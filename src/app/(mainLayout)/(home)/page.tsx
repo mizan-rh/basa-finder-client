@@ -14,36 +14,36 @@ const page = () => {
       <div className="">
         <Bannar />
       </div>
-      <div className="">
+      <div className="px-4 md:px-16">
         <RentPropertySlider />
       </div>
-      <div className="">
+      <div className="px-4 md:px-16">
         <HeroBanner />
       </div>
-      <div className="">
+      <div className="px-4 md:px-16">
         <PopularLocations />
       </div>
-      <div className="">
+      <div className="px-4 md:px-16">
         <RulesSection />
       </div>
 
-      <div className="">
+      <div className="px-4 md:px-16">
         <TestimonialSection />
       </div>
-      <div className="">
+      <div className="px-4 md:px-16">
         <Contact />
       </div>
 
       {/* populer items list dynamic */}
-      <div className=""></div>
+      <div className="px-4 md:px-16"></div>
       {/* listing dynamic */}
-      <div className=""></div>
+      <div className="px-4 md:px-16"></div>
       {/* add why couse us static  */}
 
       {/* home page sort slider static upcoming */}
-      <div className=""></div>
+      <div className="px-4 md:px-16"></div>
       {/* clint review dynamic*/}
-      <div className=""></div>
+      <div className="px-4 md:px-16"></div>
       {/* our partners static upcoming */}
     </div>
   );

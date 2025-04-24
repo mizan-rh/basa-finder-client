@@ -69,7 +69,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
   };
 
   return (
-    <NMContainer className="my-20">
+    <NMContainer className="my-20 px-4 md:px-16">
       {/* Search Section */}
       <div className="bg-white p-6 rounded-xl mb-10">
         <h3 className="text-xl font-semibold mb-4 text-center">
@@ -114,19 +114,15 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
               onValueChange={(value) => setBedrooms(value)}
             >
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Any" />
+                <SelectValue placeholder="Bedromes" />
               </SelectTrigger>
-              <SelectContent className="bg-amber-500">
-                <SelectItem className="hover:bg-cyan-400" value="any">
-                  Any
-                </SelectItem>
-                <SelectItem className="hover:bg-lime-300" value="1">
-                  1
-                </SelectItem>
-                <SelectItem value="2">2</SelectItem>
-                <SelectItem value="3">3</SelectItem>
-                <SelectItem value="4">4</SelectItem>
-                <SelectItem value="5">5+</SelectItem>
+              <SelectContent className="bg-gray-200">
+                <SelectItem value="any">Bedrooms</SelectItem>
+                <SelectItem value="1">1 Bedrooms</SelectItem>
+                <SelectItem value="2">2 Bedrooms</SelectItem>
+                <SelectItem value="3">3 Bedrooms</SelectItem>
+                <SelectItem value="4">4 Bedrooms</SelectItem>
+                <SelectItem value="5">5+ Bedrooms</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -161,7 +157,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
       </div> */}
 
       {/* Listings Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-16 mt-10 px-10 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-10 px-10 py-8">
         {filteredListings.length > 0 ? (
           filteredListings.map((listing: ListingWithId, idx: number) => (
             <ListingCard
