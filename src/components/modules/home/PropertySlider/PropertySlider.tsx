@@ -130,8 +130,7 @@ const RentPropertySlider = () => {
               <div className="p-4 space-y-2">
                 <h3 className="font-semibold text-lg">{property.title}</h3>
                 <p className="text-blue-600 font-bold text-sm">
-                  £{property.price}.00{" "}
-                  <span className="text-gray-500">/pernight</span>
+                  £{property.price}.00 <span className="text-gray-500"></span>
                 </p>
                 <div className="flex justify-between text-sm text-gray-500">
                   <span>{property.area}</span>
