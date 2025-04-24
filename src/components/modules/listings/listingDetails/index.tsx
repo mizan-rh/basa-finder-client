@@ -32,6 +32,7 @@ import { useUser } from "@/context/UserContext";
 import { useRentalRequest } from "@/context/RentalRequestContext";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import Link from "next/link";
 
 const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
   const { user } = useUser();
@@ -119,13 +120,21 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col md:flex-row gap-6 mt-6">
-          {user?.role === "tenant" && (
-            <Button
-              className="rounded-full px-6 py-2"
-              onClick={handleRequestRent}
-            >
-              Request Rental
-            </Button>
+          {user ? (
+            <div className="">
+              {user?.role === "tenant" && (
+                <Button
+                  className="rounded-full px-6 py-2"
+                  onClick={handleRequestRent}
+                >
+                  Request Rental
+                </Button>
+              )}
+            </div>
+          ) : (
+            <Link href={"/login"} className=" text-xs text-gray-500 capitalize">
+              [note: if u rent a house please login as(tenants)]
+            </Link>
           )}
         </div>
       </CardContent>
