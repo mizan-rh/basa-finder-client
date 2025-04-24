@@ -103,7 +103,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="">
-            <nav className="hidden md:flex items-center space-x-3 lg:space-x-6">
+            <nav className="hidden lg:flex items-center space-x-3 lg:space-x-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -120,22 +120,6 @@ const Navbar = () => {
 
           {/*  */}
           <div className="flex  gap-4 md:gap-8">
-            {/* Cart with responsive spacing */}
-            {/* <Link href="/cart" className={`relative ${user ? "mt-1.5" : ""} `}>
-              <button className=" flex items-center cursor-pointer bg-transparent text-[#0AA5CD] border-0 justify-center">
-                <ShoppingCart className=" " />
-                {products?.length > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-red-500 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                      {products.length > 9 ? "9+" : products.length}
-                    </span>
-                  )} */}
-            {/* static update on server */}
-            {/* <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-3 h-3 flex p-2 items-center justify-center">
-                  0
-                </span>
-              </button>
-            </Link> */}
-
             {/* User Authentication - Desktop */}
             <div className="px-6">
               {user ? (
@@ -192,59 +176,58 @@ const Navbar = () => {
                 </Link>
               )}
             </div>
-          </div>
-
-          {/* Mobile Navigation Controls */}
-          <div className="flex items-center space-x-3 md:hidden">
-            {/* Mobile Menu Hamburger */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
-                  <Menu className="w-5 h-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-[80%] sm:w-[300px]">
-                {/* Accessibility - Visually Hidden Title */}
-                <div className="sr-only">
-                  <DialogTitle>Mobile Navigation Menu</DialogTitle>
-                </div>
-
-                {/* Mobile Menu Header with Close Button */}
-                <div className="flex items-center justify-between mb-6 pt-2 ">
-                  <Link
-                    href="/"
-                    className="flex items-center space-x-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Image src={brand} alt="BasaFinder Logo" />
-                  </Link>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="h-8 w-8 p-0"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {/* <X className="w-5 h-5" /> */}
+            {/* Mobile Navigation Controls */}
+            <div className="flex items-center space-x-3 lg:hidden">
+              {/* Mobile Menu Hamburger */}
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
+                    <Menu className="w-5 h-5" />
                   </Button>
-                </div>
+                </SheetTrigger>
+                <SheetContent side="left" className="w-[80%] sm:w-[300px]">
+                  {/* Accessibility - Visually Hidden Title */}
+                  <div className="sr-only">
+                    <DialogTitle>Mobile Navigation Menu</DialogTitle>
+                  </div>
 
-                {/* Mobile Menu Links */}
-                <div className="flex flex-col space-y-4">
-                  {navLinks.map((link) => (
+                  {/* Mobile Menu Header with Close Button */}
+                  <div className="flex items-center justify-between mb-6 pt-2 ">
                     <Link
-                      key={link.name}
-                      href={link.href}
-                      className={`text-sm lg:text-base ${
-                        pathname === link.href ? "text-[#0AA5CD]" : ""
-                      }`}
+                      href="/"
+                      className="flex items-center space-x-2"
                       onClick={() => setIsOpen(false)}
                     >
-                      {link.name}
+                      <Image src={brand} alt="BasaFinder Logo" />
                     </Link>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 w-8 p-0"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {/* <X className="w-5 h-5" /> */}
+                    </Button>
+                  </div>
+
+                  {/* Mobile Menu Links */}
+                  <div className="flex flex-col space-y-4">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.name}
+                        href={link.href}
+                        className={`text-sm lg:text-base ${
+                          pathname === link.href ? "text-[#0AA5CD]" : ""
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </header>
