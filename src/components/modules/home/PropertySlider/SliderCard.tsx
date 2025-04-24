@@ -32,30 +32,6 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
     setFilteredListings(initialListings);
   }, [initialListings]);
 
-  // Handle search filter changes
-  // const handleSearch = () => {
-  //   const filtered = initialListings.filter((listing: ListingWithId) => {
-  //     // Filter by location (case insensitive)
-  //     const locationMatch =
-  //       location === "" ||
-  //       listing.location.toLowerCase().includes(location.toLowerCase());
-
-  //     // Filter by price range
-  //     const priceMatch =
-  //       listing.rentAmount >= priceRange[0] &&
-  //       listing.rentAmount <= priceRange[1];
-
-  //     // Filter by bedrooms
-  //     const bedroomsMatch =
-  //       bedrooms === "any" || listing.bedrooms.toString() === bedrooms;
-
-  //     return locationMatch && priceMatch && bedroomsMatch;
-  //   });
-
-  //   setFilteredListings(filtered);
-  // };
-
-  // Reset all filters
   return (
     <NMContainer className=" p-0">
       <Swiper
@@ -84,7 +60,10 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
         }}
       >
         {filteredListings.map((listing: ListingWithId, idx: number) => (
-          <SwiperSlide className="my-20 lg:px-4 !mr-0 ml-5" key={listing.id}>
+          <SwiperSlide
+            className="my-20 lg:px-4 !mr-0 ml-4 md:ml-5"
+            key={listing.id}
+          >
             <ListingCard
               key={idx}
               listing={{
