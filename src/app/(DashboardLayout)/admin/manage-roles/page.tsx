@@ -144,7 +144,7 @@ const UsersRoleManagementPage = () => {
                       <SelectTrigger className="w-[180px]">
                         <SelectValue />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-white">
                         <SelectItem value="admin">Admin</SelectItem>
                         <SelectItem value="landlord">Landlord</SelectItem>
                         <SelectItem value="tenant">Tenant</SelectItem>

@@ -220,7 +220,7 @@ export default function UpdateProductForm({ product }: { product: IProduct }) {
                         <SelectValue placeholder="Select Product Category" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       {categories.map((category) => (
                         <SelectItem key={category?._id} value={category?._id}>
                           {category?.name}
@@ -248,7 +248,7 @@ export default function UpdateProductForm({ product }: { product: IProduct }) {
                         <SelectValue placeholder="Select Product Brand" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       {brands.map((brand) => (
                         <SelectItem key={brand?._id} value={brand?._id}>
                           {brand?.name}

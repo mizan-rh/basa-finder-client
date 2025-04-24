@@ -99,7 +99,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
               <SelectTrigger className="w-full h-full">
                 <SelectValue placeholder="Bedromes" />
               </SelectTrigger>
-              <SelectContent className="bg-gray-200">
+              <SelectContent className="bg-white"> className="bg-gray-200">
                 <SelectItem value="any">Bedrooms</SelectItem>
                 <SelectItem value="1">1 Bedrooms</SelectItem>
                 <SelectItem value="2">2 Bedrooms</SelectItem>

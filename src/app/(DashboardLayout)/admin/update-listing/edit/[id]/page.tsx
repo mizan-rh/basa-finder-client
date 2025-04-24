@@ -298,7 +298,7 @@ const EditListing = () => {
               >
                 <SelectValue placeholder="Select bedrooms" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white">
                 {/* <SelectItem value="0">Studio</SelectItem> */}
                 <SelectItem value="1">1 Bedroom</SelectItem>
                 <SelectItem value="2">2 Bedrooms</SelectItem>
