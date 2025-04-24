@@ -185,7 +185,7 @@ export default function VerifyPayment() {
           <div className="mt-6 text-center pb-2">
             <Button
               onClick={handleHomeRedirect}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 font-semibold rounded-lg"
+              className="bg-[#0aa5cd] hover:bg-blue-700 text-white px-6 py-2 font-semibold rounded-lg"
             >
               Go to Home
             </Button>

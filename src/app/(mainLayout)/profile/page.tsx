@@ -17,7 +17,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       if (!user?.userId) return;
-  
+
       try {
         const res = await getSingleUser(user.userId);
         if (res?.success) {
@@ -27,10 +27,9 @@ const ProfilePage = () => {
         console.error("Error fetching user data:", error);
       }
     };
-  
+
     fetchUserData();
   }, [user?.userId]);
-  
 
   if (!userData) {
     return (
@@ -44,22 +43,28 @@ const ProfilePage = () => {
   }
 
   return (
-    <NMContainer className="max-w-4xl mx-auto my-10 p-8 bg-gradient-to-r from-blue-300 to-cyan-200 shadow-lg rounded-3xl">
+    <NMContainer className="max-w-4xl mx-auto my-10 p-8 bg-white shadow-lg rounded-3xl">
       <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-6 md:space-y-0">
         <Avatar className="w-24 h-24 md:w-32 md:h-32 border-4 border-blue-500">
           {/* <AvatarImage src={userData.profileImg || "/user-placeholder.jpg"} /> */}
-          <AvatarImage src={userData.profileImg || "https://i.postimg.cc/QxnWx7KH/user-placeholder.jpg"} />
+          <AvatarImage
+            src={
+              userData.profileImg ||
+              "https://i.postimg.cc/QxnWx7KH/user-placeholder.jpg"
+            }
+          />
           <AvatarFallback>{userData.name[0]}</AvatarFallback>
         </Avatar>
         <div className="text-center md:text-left">
           <h2 className="text-3xl font-bold text-gray-800">{userData.name}</h2>
           <p className="text-gray-600 font-semibold">{userData.email}</p>
-          <p className="text-sm text-blue-600 font-semibold capitalize">{userData.role}</p>
+          <p className="text-sm text-blue-600 font-semibold capitalize">
+            {userData.role}
+          </p>
         </div>
       </div>
 
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-
         <div className="p-4 bg-white shadow-sm rounded-xl">
           <p className="text-sm text-gray-600">Phone Number:</p>
           <p className="text-lg font-medium text-gray-800">
@@ -98,13 +103,13 @@ const ProfilePage = () => {
         <Link href="/update-profile">
           <Button
             variant="outline"
-            className="rounded-full px-6 py-2 hover:bg-blue-500 hover:text-white transition-all"
+            className="rounded-full px-6 py-2 hover:bg-black text-white bg-[#0aa5cd] hover:text-white transition-all"
           >
             Update Profile
           </Button>
         </Link>
         <Link href="/change-password">
-          <Button className="text-white rounded-full px-6 py-2 hover:bg-blue-600 transition-all">
+          <Button className="text-white rounded-full px-6 py-2 hover:bg-[#0aa5cd] transition-all">
             Change Password
           </Button>
         </Link>
