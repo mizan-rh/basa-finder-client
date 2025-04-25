@@ -121,5 +121,26 @@ npm run dev
 │   ├── services/
 │   └── schemas/
 
+# 🧪 Scripts
+
+npm run dev # Run with nodemon
+npm run build # Build TypeScript
+npm run start # Run built app
+npm run lint # Run ESLint
+npm run format # Format with Prettier
+
+# 🙋‍♂️ Author
+
+- Name: mst. Rebeka Sultana
+- Email: rebakpi@gmail.com
+
+- Name: md. Mizanur Rahman
+- Email: mizan@gmail.com
+
+- Name: md. Ahsanur Rahman Tonmoy
+- Email: rebakpi@gmail.com
+
+```
+
 ```
 
