@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏠 BasaFinder – Smart Rental & Housing Solution
 
-## Getting Started
+BasaFinder is a comprehensive rental housing solution that connects tenants, landlords, and admins through a smart platform. It offers streamlined property listing, rental requests, approval workflows, and integrated payment systems.
 
-First, run the development server:
+## 🌐 Live URL
+🔗 (https://basa-finder-client-six.vercel.app)
+(https://basa-finder-server.vercel.app)
+
+## 📂 GitHub Repository
+🔗 [https://github.com/mizan-rh/basa-finder-client.git]
+(https://github.com/mizan-rh/basa-finder-server.git) 
+
+## 🎥 Video Explanation
+🔗 [https://drive.google.com/file/d/xyz/view?usp=sharing](https://drive.google.com/file/d/xyz/view?usp=sharing) 
+
+---
+
+## 🚀 Features
+
+### 🧑‍💼 Role-Based Dashboard
+- **Admin**: Manage all users, handle rental requests, view payments.
+- **Landlord**: List properties, approve/reject tenant requests, manage listings.
+- **Tenant**: Browse properties, send rental requests, track application status.
+
+### 💳 Secure Payment Integration
+- Stripe & ShurjoPay integrated for seamless online payments.
+
+### 📄 Rental Workflow
+- Rental Request ➡️ Approval/Rejection ➡️ Payment ➡️ Confirmation.
+
+### 🧾 Invoice & Email Notification
+- Automatically generates invoices and sends confirmation emails.
+
+### 🔐 Authentication
+- Secure login system using **NextAuth** with JWT.
+- Role-based route protection.
+
+### 📱 Responsive UI
+- Fully responsive design for desktop, tablet, and mobile.
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+- **Next.js** (App Router)
+- **Redux Toolkit** for global state management
+- **NextAuth** for authentication
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Lucide Icons** and **Next.js Image** for optimization
+
+### Backend
+- **Node.js**, **Express.js** for API development
+- **Mongoose** for MongoDB interactions
+- **TypeScript** for server-side type safety
+
+### Package Management
+- **NPM** for managing dependencies
+- Common packages: `axios`, `jsonwebtoken`, `bcrypt`, `cors`, `dotenv`, `zod`, etc.
+
+---
+
+## ⚙️ Getting Started
+
+### Prerequisites
+- Node.js >= 18.x
+- MongoDB Atlas URI
+- Environment Variables (see `.env.example`)
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/basafinder.git
+
+# Navigate into the directory
+cd basafinder
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+```
+# Environment Variables
+- Create a .env.local file and add the following:
+
+NEXTAUTH_SECRET=your_secret
+NEXTAUTH_URL=http://localhost:3000
+
+MONGODB_URI=your_mongo_uri
+SHURJOPAY_KEY=your_shurjopay_key
+
+## 🧪 Folder Structure
+├── app/
+│   ├── api/
+│   ├── dashboard/
+│   ├── components/
+│   ├── hooks/
+│   └── utils/
+├── pages/
+├── public/
+├── prisma/
+├── server/
+│   ├── controllers/
+│   ├── routes/
+│   ├── services/
+│   └── schemas/
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
