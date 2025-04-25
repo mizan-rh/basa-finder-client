@@ -15,6 +15,17 @@ BasaFinder is a comprehensive rental housing solution that connects tenants, lan
 ## 🎥 Video Explanation
 🔗 [https://drive.google.com/file/d/xyz/view?usp=sharing](https://drive.google.com/file/d/xyz/view?usp=sharing) 
 
+## Admin credential 
+- email: admin@gmail.com
+- Password: Mizan@123
+## LandLord credential
+- Email: landlord@gmail.com
+- Password: Mizan@123
+## Tenant credential
+- email: tenant@gmail.com
+- Password: Mizan@123
+
+
 ---
 
 ## 🚀 Features
