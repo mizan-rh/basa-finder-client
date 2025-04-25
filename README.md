@@ -3,14 +3,14 @@
 BasaFinder is a comprehensive rental housing solution that connects tenants, landlords, and admins through a smart platform. It offers streamlined property listing, rental requests, approval workflows, and integrated payment systems.
 
 ## 🌐 Live URL
-🔗https://basa-finder-client-six.vercel.app
-
-  https://basa-finder-server.vercel.app
+🔗 
+- https://basa-finder-client-six.vercel.app
+- https://basa-finder-server.vercel.app
 
 ## 📂 GitHub Repository
-🔗 https://github.com/mizan-rh/basa-finder-client.git
-
-    https://github.com/mizan-rh/basa-finder-server.git 
+🔗 
+- https://github.com/mizan-rh/basa-finder-client.git
+- https://github.com/mizan-rh/basa-finder-server.git 
 
 ## 🎥 Video Explanation
 🔗 [https://drive.google.com/file/d/xyz/view?usp=sharing](https://drive.google.com/file/d/xyz/view?usp=sharing) 
@@ -89,11 +89,10 @@ npm run dev
 # Environment Variables
 - Create a .env.local file and add the following:
 
-NEXTAUTH_SECRET=your_secret
-NEXTAUTH_URL=http://localhost:3000
-
-MONGODB_URI=your_mongo_uri
-SHURJOPAY_KEY=your_shurjopay_key
+- NEXTAUTH_SECRET=your_secret
+- NEXTAUTH_URL=http://localhost:3000
+- MONGODB_URI=your_mongo_uri
+- SHURJOPAY_KEY=your_shurjopay_key
 
 ## 🧪 Folder Structure
 ├── app/
