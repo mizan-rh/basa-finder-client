@@ -74,7 +74,7 @@ BasaFinder is a comprehensive rental housing solution that connects tenants, lan
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/basafinder.git
+git clone (https://github.com/mizan-rh/basa-finder-client.git)
 
 # Navigate into the directory
 cd basafinder
