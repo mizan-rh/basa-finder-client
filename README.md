@@ -138,7 +138,7 @@ npm run format # Format with Prettier
 - Email: mizan@gmail.com
 
 - Name: md. Ahsanur Rahman Tonmoy
-- Email: rebakpi@gmail.com
+- Email: ahosant82@gmail.com
 
 ```
 
