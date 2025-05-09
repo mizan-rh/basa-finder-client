@@ -1,7 +1,7 @@
-import IProduct from "@/types";
+import { addCoupon } from "@/services/cart";
+import { IProduct } from "@/types/product";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
-import { addCoupon } from "@/services/cart";
 
 export interface CartProduct extends IProduct {
   orderQuantity: number;
@@ -52,6 +52,7 @@ export const fetchCoupon = createAsyncThunk(
       }
 
       return res;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       console.log(err);
       throw new Error(err.message);
