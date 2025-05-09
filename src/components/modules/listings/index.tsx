@@ -1,5 +1,5 @@
 import ListingCard from "@/components/ui/core/ListingCard";
-import { TRentalListing } from "@/types";
+import { TRentalListing } from "@/types/listings";
 // import FilterSidebar from "./FilterSidebar";
 import FilterSidebar from "./filterSidebar";
 

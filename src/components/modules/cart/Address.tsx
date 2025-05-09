@@ -42,7 +42,7 @@ export default function Address() {
             <SelectTrigger className="mb-5">
               <SelectValue placeholder="Select a city" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-white">
               {cities.map((city) => (
                 <SelectItem key={city} value={city}>
                   {city}

@@ -1,5 +1,4 @@
 import LandlordTenantRequests from "@/app/(MainLayout)/landlord/requests/page";
-import React from "react";
 
 const requestsPage = () => {
   return (

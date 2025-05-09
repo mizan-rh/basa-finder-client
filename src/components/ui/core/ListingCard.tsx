@@ -21,7 +21,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
   return (
     <>
       <Link href={`/listings/${listing?.id}`} passHref>
-        <div className="bg-white rounded-xl shadow-2xl">
+        <div className="bg-white rounded-xl shadow-2xl hover:shadow-lg transition decoration-300 h-[480px]">
           {/* image block */}
           <div className="relative w-full h-56 ">
             <Image
@@ -81,7 +81,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
             {/* tags */}
             <div className="my-6">
               <div className="flex gap-2 text-[10px] flex-wrap">
-                {listing.amenities.map((amenity, idx) => (
+                {listing.amenities.slice(0, 3).map((amenity, idx) => (
                   <span
                     key={idx}
                     className="bg-gray-200 px-4 py-1 rounded-2xl  "

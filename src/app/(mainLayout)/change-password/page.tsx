@@ -27,9 +27,9 @@ const ChangePassword = () => {
     reset,
   } = useForm<PasswordFormValues>({
     resolver: zodResolver(passwordSchema),
-    defaultValues: { 
-      oldPassword: "", 
-      newPassword: "" 
+    defaultValues: {
+      oldPassword: "",
+      newPassword: "",
     }, // ✅ Ensure fields are controlled from the start
   });
 
@@ -49,7 +49,9 @@ const ChangePassword = () => {
         toast.success("Password updated successfully!", { id: toastId });
         reset(); // ✅ Reset form after success
       } else {
-        toast.error(res.message || "Failed to change password", { id: toastId });
+        toast.error(res.message || "Failed to change password", {
+          id: toastId,
+        });
       }
     } catch (error) {
       toast.error("Something went wrong. Please try again.", { id: toastId });
@@ -62,8 +64,12 @@ const ChangePassword = () => {
   return (
     <div className="flex justify-center items-center min-h-screen p-4">
       <Card className="w-full max-w-md shadow-lg p-6 rounded-lg">
-        <h2 className="text-2xl font-semibold text-center mb-4">Change Password</h2>
-        <p className="text-center text-gray-600 mb-6">Secure your account with a new password.</p>
+        <h2 className="text-2xl font-semibold text-center mb-4">
+          Change Password
+        </h2>
+        <p className="text-center text-gray-600 mb-6">
+          Secure your account with a new password.
+        </p>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           {/* Old Password */}
@@ -91,7 +97,11 @@ const ChangePassword = () => {
                 {showOldPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
-            {errors.oldPassword && <p className="text-red-500 text-xs">{errors.oldPassword.message}</p>}
+            {errors.oldPassword && (
+              <p className="text-red-500 text-xs">
+                {errors.oldPassword.message}
+              </p>
+            )}
           </div>
 
           {/* New Password */}
@@ -119,13 +129,17 @@ const ChangePassword = () => {
                 {showNewPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
-            {errors.newPassword && <p className="text-red-500 text-xs">{errors.newPassword.message}</p>}
+            {errors.newPassword && (
+              <p className="text-red-500 text-xs">
+                {errors.newPassword.message}
+              </p>
+            )}
           </div>
 
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md flex items-center justify-center gap-2"
+            className="w-full bg-[#0aa5cd] hover:bg-blue-700 text-white py-2 rounded-md flex items-center justify-center gap-2"
             disabled={loading}
           >
             {loading ? (

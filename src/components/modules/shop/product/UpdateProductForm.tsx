@@ -1,6 +1,9 @@
 "use client";
 
+import Logo from "@/assets/svgs/Logo";
 import { Button } from "@/components/ui/button";
+import NMImageUploader from "@/components/ui/core/NMImageUploader";
+import ImagePreviewer from "@/components/ui/core/NMImageUploader/ImagePreviewer";
 import {
   Form,
   FormControl,
@@ -10,18 +13,15 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Plus } from "lucide-react";
+import { useEffect, useState } from "react";
 import {
   FieldValues,
   SubmitHandler,
   useFieldArray,
   useForm,
 } from "react-hook-form";
-import { Textarea } from "@/components/ui/textarea";
-import { useEffect, useState } from "react";
-import NMImageUploader from "@/components/ui/core/NMImageUploader";
-import ImagePreviewer from "@/components/ui/core/NMImageUploader/ImagePreviewer";
-import { Plus } from "lucide-react";
-import Logo from "@/assets/svgs/Logo";
 
 import {
   Select,
@@ -30,12 +30,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { IBrand, ICategory, IProduct } from "@/types";
-import { getAllCategories } from "@/services/Category";
 import { getAllBrands } from "@/services/Brand";
+import { getAllCategories } from "@/services/Category";
+import { updateProduct } from "@/services/Product";
+import { IBrand, ICategory, IProduct } from "@/types";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { updateProduct } from "@/services/Product";
 
 export default function UpdateProductForm({ product }: { product: IProduct }) {
   const [imageFiles, setImageFiles] = useState<File[] | []>([]);
@@ -220,7 +220,7 @@ export default function UpdateProductForm({ product }: { product: IProduct }) {
                         <SelectValue placeholder="Select Product Category" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       {categories.map((category) => (
                         <SelectItem key={category?._id} value={category?._id}>
                           {category?.name}
@@ -248,7 +248,7 @@ export default function UpdateProductForm({ product }: { product: IProduct }) {
                         <SelectValue placeholder="Select Product Brand" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       {brands.map((brand) => (
                         <SelectItem key={brand?._id} value={brand?._id}>
                           {brand?.name}

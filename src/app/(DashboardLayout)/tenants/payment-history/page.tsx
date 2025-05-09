@@ -1,11 +1,11 @@
-import PaymentHistory from "@/app/(MainLayout)/payment/my-payments/page"
+import PaymentHistory from "@/app/(MainLayout)/payment/my-payments/page";
 
 const paymentHistoryPage = () => {
   return (
     <div>
-        <PaymentHistory />
+      <PaymentHistory />
     </div>
-  )
-}
+  );
+};
 
-export default paymentHistoryPage
+export default paymentHistoryPage;

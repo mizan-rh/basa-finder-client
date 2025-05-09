@@ -1,15 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useUser } from "@/context/UserContext";
-import { useRouter } from "next/navigation";
-import { createListing } from "@/services/Listings";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { Loader2, XCircle } from "lucide-react";
-import Image from "next/image";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
@@ -17,8 +11,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useUser } from "@/context/UserContext";
+import { createListing } from "@/services/Listings";
+import { Loader2, XCircle } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const CreateRentalListing = () => {
   const { user } = useUser();
@@ -298,13 +298,38 @@ const CreateRentalListing = () => {
               >
                 <SelectValue placeholder="Select bedrooms" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-white">
                 {/* <SelectItem value="0">Studio</SelectItem> */}
-                <SelectItem value="1">1 Bedroom</SelectItem>
-                <SelectItem value="2">2 Bedrooms</SelectItem>
-                <SelectItem value="3">3 Bedrooms</SelectItem>
-                <SelectItem value="4">4 Bedrooms</SelectItem>
-                <SelectItem value="5">5+ Bedrooms</SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="1"
+                >
+                  1 Bedroom
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="2"
+                >
+                  2 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="3"
+                >
+                  3 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="4"
+                >
+                  4 Bedrooms
+                </SelectItem>
+                <SelectItem
+                  className="hover:bg-neutral-800 hover:text-white"
+                  value="5"
+                >
+                  5+ Bedrooms
+                </SelectItem>
               </SelectContent>
             </Select>
             {errors.bedrooms && (
@@ -403,7 +428,7 @@ const CreateRentalListing = () => {
         {/* Submit Button */}
         <Button
           type="submit"
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+          className="w-full bg-[#0aa5cd] hover:bg-blue-700 text-white"
           disabled={loading || isUploading}
         >
           {loading ? (

@@ -1,8 +1,11 @@
 "use client";
 
 import animationData from "@/assets/lottie.json";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
 import React, { useState } from "react";
+
+// Dynamically import Lottie with SSR disabled
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const Contact: React.FC = () => {
   const [result, setResult] = useState<string>("");
@@ -12,7 +15,7 @@ const Contact: React.FC = () => {
     setResult("Sending...");
 
     const formData = new FormData(event.currentTarget);
-    formData.append("access_key", "b76ad003-7ff6-4c8b-8430-8f585a965ed1");
+    formData.append("access_key", "d5415b89-3671-46f0-ab83-a4b22dd39cd1");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -29,8 +32,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="w-full my-20 ">
-      <div className="container mx-auto ">
+    <section className="w-full ">
+      <div className="container mx-auto">
         <p className="text-sm uppercase tracking-widest text-[#0AA5CD] text-center">
           BASA FINDER
         </p>
@@ -38,7 +41,7 @@ const Contact: React.FC = () => {
           Contact Me
         </h2>
 
-        <div className="mt-12  p-10 bg-[#0f172a] rounded-2xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+        <div className="mt-12 p-10 bg-gray-100 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 px-4 md:px-16">
           {/* Form Section */}
           <div className="w-full lg:w-1/2 bg-white p-6 md:p-10 rounded-2xl shadow-2xl">
             <p className="text-xl font-semibold text-center text-gray-700 mb-6">
@@ -96,7 +99,7 @@ const Contact: React.FC = () => {
               <div className="text-center mt-10">
                 <button
                   type="submit"
-                  className="bg-[#0AA5CD] hover:bg-[#088aa9] text-white px-6 py-3 rounded-xl font-semibold transition duration-300"
+                  className="bg-[#0AA5CD] hover:bg-[#000] text-white px-6 py-3 rounded-xl font-semibold transition duration-300 cursor-pointer"
                 >
                   Send Message
                 </button>

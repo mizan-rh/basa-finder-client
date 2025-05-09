@@ -92,7 +92,7 @@ export default function CreateCouponModal() {
                         <SelectValue placeholder="Select discount type" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="bg-white">
                       <SelectItem value="percentage">Percentage</SelectItem>
                       <SelectItem value="flat">Flat</SelectItem>
                     </SelectContent>
