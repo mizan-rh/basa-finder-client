@@ -1,36 +1,37 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import brand from "@/assets/images/brand/basaFinder-md.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 // import { useAppSelector } from "@/redux/hooks";
 // import { orderedProductsSelector } from "@/redux/features/cartSlice";
-import { useUser } from "@/context/UserContext";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuTrigger,
   DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  LogOut,
-  User,
-  LayoutDashboardIcon,
-  // ShoppingCart,
-  Menu,
-} from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useUser } from "@/context/UserContext";
 import { logout } from "@/services/AuthService";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import {
+  LayoutDashboardIcon,
+  LogOut,
+  // ShoppingCart,
+  Menu,
+  User,
+} from "lucide-react";
 
 import { FaRegCircleUser } from "react-icons/fa6";
 
 const Navbar = () => {
+  const { refetchUser } = useUser();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
 
@@ -55,9 +56,11 @@ const Navbar = () => {
   }, []);
 
   //
-  const handleLogOut = () => {
-    logout();
-    setIsLoading(true);
+  const handleLogOut = async () => {
+    logout(); // clear auth token
+    await refetchUser(); // fetch user again and update context
+    router.refresh(); // refresh UI if needed
+
     if (pathname.startsWith("/dashboard")) {
       router.push("/");
     }
