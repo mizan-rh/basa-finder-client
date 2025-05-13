@@ -4,7 +4,7 @@ BasaFinder is a comprehensive rental housing solution that connects tenants, lan
 
 ## 🌐 Live URL
 🔗 
-  - Frontend:  https://basa-finder-client-swart.vercel.app/
+  - Frontend:  https://basa-finder-client-v2.vercel.app/
   - Backend: https://basa-finder-server.vercel.app/
 
 ## 📂 GitHub Repository
