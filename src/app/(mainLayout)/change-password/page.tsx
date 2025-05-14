@@ -1,15 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { toast } from "sonner";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { Input } from "@/components/ui/input";
 import { changePassword } from "@/services/Users";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeOff, Loader2 } from "lucide-react";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { toast } from "sonner";
+import * as z from "zod";
 
 // ✅ Zod Schema for Validation
 const passwordSchema = z.object({
@@ -139,7 +139,7 @@ const ChangePassword = () => {
           {/* Submit Button */}
           <Button
             type="submit"
-            className="w-full bg-[#0aa5cd] hover:bg-blue-700 text-white py-2 rounded-md flex items-center justify-center gap-2"
+            className="w-full bg-[#F79B72] hover:bg-white hover:text-[#F79B72] border hover:border-[#F79B72] text-white py-2 rounded-md flex items-center justify-center gap-2"
             disabled={loading}
           >
             {loading ? (

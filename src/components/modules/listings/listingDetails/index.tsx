@@ -1,38 +1,38 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Dialog,
   DialogContent,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useRentalRequest } from "@/context/RentalRequestContext";
+import { useUser } from "@/context/UserContext";
 import { TRentalListing } from "@/types/listings";
 import {
-  Star,
-  MapPin,
   BedDouble,
-  DollarSign,
   CalendarDays,
   Clock,
+  DollarSign,
   FileText,
+  MapPin,
+  Star,
 } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { toast } from "sonner";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { useUser } from "@/context/UserContext";
-import { useRentalRequest } from "@/context/RentalRequestContext";
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
-import Link from "next/link";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
   const { user } = useUser();
@@ -44,12 +44,12 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
   const [rentalDuration, setRentalDuration] = useState("");
   const [specialRequirements, setSpecialRequirements] = useState("");
 
-  // ✅ Handle request button click
+  //  Handle request button click
   const handleRequestRent = () => {
     setModalOpen(true);
   };
 
-  // ✅ Handle form submission
+  //  Handle form submission
   const handleSubmitRequest = () => {
     if (!moveInDate || !rentalDuration) {
       toast.error("Please provide move-in date and rental duration.");
@@ -58,7 +58,7 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
 
     // Store data in context and navigate
     setListing({
-      ...listing, // Keep existing listing properties
+      ...listing,
       moveInDate,
       rentalDuration,
       specialRequirements,
@@ -73,13 +73,14 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
   };
 
   return (
-    <Card className="container mx-auto my-10 p-6 bg-white grid md:grid-cols-2 border-0 rounded-2xl hover:shadow-2xl cursor-pointer">
+    <Card className="container mx-auto my-10 p-6 bg-white grid-cols-1 ap-10 border-0 rounded-2xl hover:shadow-2xl cursor-pointer">
       {/* Swiper for Listing Images */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop={listing.images.length > 1}
         className="w-full h-80 rounded-xl"
       >
         {listing.images.map((image, idx) => (
@@ -124,7 +125,7 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
             <div className="">
               {user?.role === "tenant" && (
                 <Button
-                  className="rounded-full px-6 py-2"
+                  className="rounded-full hover:bg-white hover:text-[#F79B72] hover:border hover:border-[#F79B72] px-6 py-2"
                   onClick={handleRequestRent}
                 >
                   Request Rental
@@ -132,7 +133,7 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
               )}
             </div>
           ) : (
-            <Link href={"/login"} className=" text-xs text-gray-500 capitalize">
+            <Link href={"/login"} className=" text-xl text-red-500 capitalize">
               [note: if u rent a house please login as(tenants)]
             </Link>
           )}
@@ -143,7 +144,7 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
         <DialogContent className="max-w-md">
           <DialogHeader>
-            <DialogTitle className="md:text-lg text-center text-blue-500">
+            <DialogTitle className="md:text-lg text-center text-[#F79B72]">
               Request Rental
             </DialogTitle>
           </DialogHeader>
@@ -190,7 +191,12 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
             <Button variant="outline" onClick={() => setModalOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={handleSubmitRequest}>Submit Request</Button>
+            <Button
+              className="hover:bg-white hover:text-[#F79B72] border hover:border-[#F79B72]"
+              onClick={handleSubmitRequest}
+            >
+              Submit Request
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

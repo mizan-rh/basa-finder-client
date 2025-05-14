@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ProductDetails = ({ product }: { product: IProduct }) => {
   return (
-    <div className="grid grid-cols-2 gap-4 border border-white p-4 rounded-md my-5 shadow-sm">
+    <div className="min-h-screen grid grid-cols-2 gap-4 border bg-orange-500 border-white p-4 rounded-md my-5 shadow-sm">
       <div>
         <Image
           src={product?.imageUrls[0]}
@@ -63,10 +63,10 @@ const ProductDetails = ({ product }: { product: IProduct }) => {
         </p>
         <hr />
 
-        <Button variant="outline" className="w-full my-5">
+        <Button variant="outline" className="w-full bg-orange-500 my-5">
           Add To Cart
         </Button>
-        <Button className="w-full">Buy Now</Button>
+        <Button className="w-full bg-orange-500">Buy Now</Button>
       </div>
     </div>
   );

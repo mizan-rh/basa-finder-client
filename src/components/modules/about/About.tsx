@@ -6,6 +6,7 @@ import tonmoyImg from "@/assets/images/image/tonmoy.jpg";
 import { motion } from "framer-motion";
 import { Facebook, Linkedin, Mail, Phone, Target, Twitter } from "lucide-react";
 import Image from "next/image";
+import TestimonialsPage from "../Testmonials/Testmonials";
 
 const teamMembers = [
   {
@@ -30,17 +31,17 @@ const teamMembers = [
 
 const AboutUs = () => {
   return (
-    <div className="bg-gray-50 min-h-screen w-full p-y ">
+    <div className=" w-full lg:px-10  px-4 ">
       {/* Mission Section */}
-      <section className="bg-white shadow px-4 md:px-20">
-        <div className="container mx-auto px-4 py-16 text-center flex justify-center items-center flex-col ">
+      <section className="bg-white shadow ">
+        <div className="container mx-auto py-10 text-center flex justify-center items-center flex-col ">
           <motion.div
             className="flex justify-center mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Target className="text-[#0AA5CD] w-12 h-12 md:w-16 md:h-16" />
+            <Target className="text-[#F79B72] w-12 h-12 md:w-16 md:h-16" />
           </motion.div>
 
           <motion.h1
@@ -66,10 +67,10 @@ const AboutUs = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 bg-gray-50 px-4 md:px-20">
-        <div className="container mx-auto px-4">
+      <section className="  ">
+        <div className="container mx-auto py-10 ">
           <motion.p
-            className="text-base md:text-lsm text-[#0AA5CD]  text-center leading-relaxed"
+            className="text-base md:text-lsm text-[#F79B72]  text-center leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -109,11 +110,12 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
+        <TestimonialsPage />
       </section>
 
       {/* Contact Info */}
-      <section className=" text-white py-16 px-4 md:px-20">
-        <div className="container mx-auto px-4">
+      <section className=" text-white py-10 ">
+        <div className="container mx-auto ">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-black mb-12">
             Contact Us
           </h2>
@@ -133,9 +135,9 @@ const AboutUs = () => {
             </div>
             <div className="bg-white p-6 rounded-xl text-center text-black shadow">
               <div className="flex justify-center space-x-4 mb-4 text-blue-600">
-                <Facebook className="w-6 h-6 hover:text-[#0AA5CD]" />
-                <Linkedin className="w-6 h-6 hover:text-[#0AA5CD]" />
-                <Twitter className="w-6 h-6 hover:text-[#0AA5CD]" />
+                <Facebook className="w-6 h-6 hover:text-[#F79B72]" />
+                <Linkedin className="w-6 h-6 hover:text-[#F79B72]" />
+                <Twitter className="w-6 h-6 hover:text-[#F79B72]" />
               </div>
               <h3 className="font-semibold text-lg mb-1">Follow Us</h3>
               <p>basainder@gmail.com</p>

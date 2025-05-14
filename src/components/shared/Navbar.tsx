@@ -1,32 +1,32 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import brand from "@/assets/images/brand/basaFinder-md.png";
+import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 // import { useAppSelector } from "@/redux/hooks";
 // import { orderedProductsSelector } from "@/redux/features/cartSlice";
-import { useUser } from "@/context/UserContext";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuTrigger,
   DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  LogOut,
-  User,
-  LayoutDashboardIcon,
-  // ShoppingCart,
-  Menu,
-} from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useUser } from "@/context/UserContext";
 import { logout } from "@/services/AuthService";
 import { DialogTitle } from "@radix-ui/react-dialog";
+import {
+  LayoutDashboardIcon,
+  LogOut,
+  // ShoppingCart,
+  Menu,
+  User,
+} from "lucide-react";
 
 import { FaRegCircleUser } from "react-icons/fa6";
 
@@ -69,6 +69,7 @@ const Navbar = () => {
     { name: "About-Us", href: "/about" },
     { name: "All-Rentals", href: "/listings" },
     { name: "Contact", href: "/contact" },
+    { name: "Blogs", href: "/blogs" },
 
     // add more menu if work onther routes
 
@@ -86,18 +87,18 @@ const Navbar = () => {
             : `${
                 pathname === "/"
                   ? "bg-transparent fixed text-white font-bold top-0 left-0 w-full shadow-2xs"
-                  : " bg-white text-black shadow-2xs font-bold"
+                  : "  shadow-2xs font-bold"
               }`
         }
       >
-        <div className="container flex items-center justify-between mx-auto  px-4">
+        <div className="container flex items-center justify-between mx-auto py-6 px-4">
           {/* Logo - Responsive sizing */}
           <div>
             <Link href="/" className="flex items-center space-x-2">
-              <Image src={brand} alt="BasaFinder Logo" />
-              {/* <span className="text-lg sm:text-xl md:text-2xl font-bold">
-              BasaFinder
-            </span> */}
+              <Image src={logo} alt="BasaFinder Logo" className="w-10 h-10" />
+              <span className="text-lg sm:text-xl md:text-2xl font-bold">
+                BasaFinder
+              </span>
             </Link>
           </div>
 
@@ -110,8 +111,8 @@ const Navbar = () => {
                   href={link.href}
                   className={`text-sm lg:text-base ${
                     pathname === link.href
-                      ? "text-[#0AA5CD]"
-                      : "hover:text-[#0AA5CD]"
+                      ? "text-[#F79B72]"
+                      : "hover:text-[#F79B72]"
                   }`}
                 >
                   {link.name}
@@ -143,7 +144,7 @@ const Navbar = () => {
                     <DropdownMenuLabel>My Account</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem
-                      className="hover:bg-[#0aa5cd] hover:text-white transition decoration-300"
+                      className="hover:bg-[#F79B72] hover:text-white transition decoration-300"
                       asChild
                     >
                       <Link
@@ -155,7 +156,7 @@ const Navbar = () => {
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem
-                      className="hover:bg-[#0aa5cd] hover:text-white transition decoration-300"
+                      className="hover:bg-[#F79B72] hover:text-white transition decoration-300"
                       asChild
                     >
                       <Link
@@ -178,7 +179,7 @@ const Navbar = () => {
                 </DropdownMenu>
               ) : (
                 <Link href="/login">
-                  <button className="text-[#0AA5CD] cursor-pointer">
+                  <button className="text-[#F79B72] cursor-pointer">
                     <FaRegCircleUser className=" text-2xl " />
                   </button>
                 </Link>
@@ -206,7 +207,16 @@ const Navbar = () => {
                       className="flex items-center space-x-2"
                       onClick={() => setIsOpen(false)}
                     >
-                      <Image src={brand} alt="BasaFinder Logo" />
+                      <Link href="/" className="flex items-center space-x-2">
+                        <Image
+                          src={logo}
+                          alt="BasaFinder Logo"
+                          className="w-10 h-10"
+                        />
+                        <span className="text-lg sm:text-xl md:text-2xl font-bold">
+                          BasaFinder
+                        </span>
+                      </Link>
                     </Link>
                     <Button
                       variant="ghost"
@@ -225,7 +235,7 @@ const Navbar = () => {
                         key={link.name}
                         href={link.href}
                         className={`text-sm lg:text-base ${
-                          pathname === link.href ? "text-[#0AA5CD]" : ""
+                          pathname === link.href ? "text-[#F79B72]" : ""
                         }`}
                         onClick={() => setIsOpen(false)}
                       >

@@ -1,22 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useUser } from "@/context/UserContext";
-import { useRouter } from "next/navigation";
-import { getLandlordRequests, updateRequestStatus } from "@/services/Requests";
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableRow,
-  TableCell,
-} from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { Loader2,  XCircle, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Modal from "@/components/ui/Modal";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { useUser } from "@/context/UserContext";
+import { getLandlordRequests, updateRequestStatus } from "@/services/Requests";
+import { CheckCircle, Loader2, XCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const PendingTenantRequests = () => {
   const { user } = useUser();
@@ -33,7 +33,7 @@ const PendingTenantRequests = () => {
   };
 
   const [requests, setRequests] = useState<RentalRequest[]>([]);
-console.log('requests :',requests)
+  console.log("requests :", requests);
   // const [requests, setRequests] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState<string | null>(null);
@@ -149,7 +149,9 @@ console.log('requests :',requests)
 
   return (
     <div className="max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-lg my-10">
-      <h2 className="text-2xl font-semibold mb-6 text-center">Pending Tenant Rental Requests</h2>
+      <h2 className="text-2xl font-semibold mb-6 text-center">
+        Pending Tenant Rental Requests
+      </h2>
 
       {loading ? (
         <p className="text-center text-gray-500">Loading pending requests...</p>
@@ -245,7 +247,7 @@ console.log('requests :',requests)
         //   setPhoneModalVisible(false);
         //   setLandlordPhone("");
         // }}
-        onClose={() => setPhoneModalVisible(false)} // ✅ Use onClose instead of onCancel
+        onClose={() => setPhoneModalVisible(false)}
         okText="Submit & Approve"
       >
         <div className="py-4">

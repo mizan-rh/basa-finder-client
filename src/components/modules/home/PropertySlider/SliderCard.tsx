@@ -46,7 +46,7 @@ const SliderCard: React.FC<SliderCardProps> = ({ initialListings }) => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="px-20"
+        className="px-0"
         breakpoints={{
           320: {
             slidesPerView: 1,

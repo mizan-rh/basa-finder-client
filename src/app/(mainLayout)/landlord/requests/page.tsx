@@ -1,22 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useUser } from "@/context/UserContext";
-import { useRouter } from "next/navigation";
-import { getLandlordRequests, updateRequestStatus } from "@/services/Requests";
-import {
-  Table,
-  TableHeader,
-  TableBody,
-  TableRow,
-  TableCell,
-} from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { Loader2,  XCircle, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Modal from "@/components/ui/Modal";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { useUser } from "@/context/UserContext";
+import { getLandlordRequests, updateRequestStatus } from "@/services/Requests";
+import { CheckCircle, Loader2, XCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const LandlordTenantRequests = () => {
   const { user } = useUser();
@@ -227,7 +227,7 @@ const LandlordTenantRequests = () => {
         //   setPhoneModalVisible(false);
         //   setLandlordPhone("");
         // }}
-        onClose={() => setPhoneModalVisible(false)} // ✅ Use onClose instead of onCancel
+        onClose={() => setPhoneModalVisible(false)}
         okText="Submit & Approve"
       >
         <div className="py-4">

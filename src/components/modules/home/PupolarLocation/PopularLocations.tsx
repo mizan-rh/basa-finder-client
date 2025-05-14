@@ -24,20 +24,21 @@ const PopularLocations = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-20 ">
-      <p className="text-sm uppercase tracking-widest text-center text-[#0AA5CD]">
+    <section className="container mx-auto py-10">
+      <p className="text-sm uppercase tracking-widest text-center text-[#F79B72]">
         People Love the Most
       </p>
       <h2 className="text-4xl font-bold text-gray-800 text-center mb-10">
         Popular Locations
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:mr-16 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-hidden">
         <div className="md:row-span-2 relative aspect-[3/4] overflow-hidden rounded-lg">
           <Image
             src={locations[0].image}
             alt={locations[0].name}
             fill
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
           <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-3 py-1 rounded-full">
@@ -51,12 +52,13 @@ const PopularLocations = () => {
         {locations.slice(1).map((location, index) => (
           <div
             key={index}
-            className="relative aspect-video h-full rounded-lg overflow-hidden"
+            className="relative aspect-video w-full h-full rounded-lg overflow-hidden"
           >
             <Image
               src={location.image}
               alt={location.name}
               fill
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
             />
             <div className="absolute top-3 right-3 bg-black/70 text-white text-xs px-3 py-1 rounded-full">

@@ -29,7 +29,7 @@ const Modal: React.FC<ModalProps> = ({
           {onOk && (
             <button
               onClick={onOk}
-              className="px-4 py-2 bg-[#0aa5cd] text-white"
+              className="px-4 py-2 bg-[#F79B72] text-white"
             >
               {okText}
             </button>

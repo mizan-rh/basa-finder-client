@@ -103,13 +103,13 @@ const ProfilePage = () => {
         <Link href="/update-profile">
           <Button
             variant="outline"
-            className="rounded-full px-6 py-2 hover:bg-black text-white bg-[#0aa5cd] hover:text-white transition-all"
+            className="rounded-full px-6 py-2 hover:bg-black text-white bg-[#F79B72] hover:text-white transition-all"
           >
             Update Profile
           </Button>
         </Link>
         <Link href="/change-password">
-          <Button className="text-white rounded-full px-6 py-2 hover:bg-[#0aa5cd] transition-all">
+          <Button className="text-white rounded-full px-6 py-2 hover:bg-[#F79B72] transition-all">
             Change Password
           </Button>
         </Link>

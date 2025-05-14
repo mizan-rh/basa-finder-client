@@ -1,28 +1,28 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
-import { verifyPayment } from "@/services/Payments";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { verifyPayment } from "@/services/Payments";
 import {
-  Loader2,
-  CheckCircle,
-  XCircle,
-  Home,
-  FileText,
-  Mail,
-  CreditCard,
-  Save,
-  DollarSign,
   ArrowRight,
+  CheckCircle,
+  CreditCard,
+  DollarSign,
+  FileText,
+  Home,
+  Loader2,
+  Mail,
+  Save,
+  XCircle,
 } from "lucide-react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 // Type for payment data
 interface PaymentData {

@@ -1,22 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useUser } from "@/context/UserContext";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { useRentalRequest } from "@/context/RentalRequestContext";
-import { toast } from "sonner";
-import { getSingleUser } from "@/services/Users";
+import { useUser } from "@/context/UserContext";
 import { createRentalRequest } from "@/services/Requests";
+import { getSingleUser } from "@/services/Users";
 import { IUser } from "@/types";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const RentalHouseRequest = () => {
   const { user } = useUser();
   const router = useRouter();
-  const { listing } = useRentalRequest(); // ✅ Fetch listing data from context
+  const { listing } = useRentalRequest();
 
   // State Management
   const [userData, setUserData] = useState<IUser | null>(null);
@@ -77,7 +77,7 @@ const RentalHouseRequest = () => {
         moveInDate: listing.moveInDate,
         rentalDuration: listing.rentalDuration,
         specialRequirements: listing.specialRequirements,
-        phone: userData?.phone_number, // ✅ Include phone number in request
+        phone: userData?.phone_number,
         message,
         status: "pending",
         paymentStatus: "pending",
@@ -246,7 +246,7 @@ const RentalHouseRequest = () => {
         {/* Submit Button */}
         <Button
           type="submit"
-          className="w-full bg-[#0aa5cd] hover:bg-blue-700 text-white"
+          className="w-full bg-[#F79B72] hover:bg-blue-700 text-white"
           disabled={loading}
         >
           {loading ? "Sending..." : "Send Request"}

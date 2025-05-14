@@ -11,7 +11,7 @@ const testimonials = [
     title: "Tenant",
     text: "The rental experience was smooth, professional, and stress-free. Highly recommend their services!",
     image: person1,
-    textColor: "#0AA5CD",
+    textColor: "#F79B72",
     bgColor: "#e0f7fa",
     hoverBgColor: "#b2ebf2",
   },
@@ -37,9 +37,9 @@ const testimonials = [
 
 const TestimonialSection = () => {
   return (
-    <section className=" py-20 px-4 container mx-auto">
-      <div className="text-center mb-12 mt-20">
-        <p className="text-sm uppercase tracking-widest text-[#0AA5CD]">
+    <section className=" py-10  container mx-auto">
+      <div className="text-center pb-10 pt-24">
+        <p className="text-sm uppercase tracking-widest text-[#F79B72]">
           Testimonials
         </p>
         <h2 className="text-4xl font-bold text-gray-800">What They Say</h2>
@@ -62,12 +62,12 @@ const TestimonialSection = () => {
                 item.bgColor;
             }}
           >
-            <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
+            <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
               <Image
                 src={item.image}
                 alt={item.name}
-                width={96}
-                height={96}
+                width={160}
+                height={160}
                 className="object-cover w-full h-full"
               />
             </div>

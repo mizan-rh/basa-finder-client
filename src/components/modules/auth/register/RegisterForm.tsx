@@ -1,26 +1,26 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { registrationSchema } from "./registerValidation";
-import { logout, registerUser } from "@/services/AuthService";
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
-import { useUser } from "@/context/UserContext";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Form,
+  FormControl,
   FormField,
   FormItem,
   FormMessage,
-  FormControl,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import Link from "next/link";
-import { useState } from "react";
+import { useUser } from "@/context/UserContext";
+import { logout, registerUser } from "@/services/AuthService";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { registrationSchema } from "./registerValidation";
 
 export default function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -204,7 +204,11 @@ export default function RegisterForm() {
             />
           </div>
 
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
+          <Button
+            type="submit"
+            className="bg-[#F79B72] w-full p-4 text-white hover:text-[#F79B72] rounded-md hover:border-[#F79B72] hover:bg-white hover:border flex-1 cursor-pointer transition duration-300"
+            disabled={isSubmitting}
+          >
             {isSubmitting ? "Registering..." : "Register"}
           </Button>
         </form>
@@ -212,13 +216,13 @@ export default function RegisterForm() {
 
       <p className="text-sm text-gray-600 text-center my-3">
         Already have an account?
-        <Link href="/login" className="text-primary">
+        <Link href="/login" className="text-[#F79B72]">
           Login
         </Link>
       </p>
       <p className="text-sm text-gray-600 text-center my-3">
         Go to{" "}
-        <Link href="/" className="text-primary">
+        <Link href="/" className="text-[#F79B72]">
           Home
         </Link>
       </p>

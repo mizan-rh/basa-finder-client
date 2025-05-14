@@ -10,16 +10,16 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 // import { loginUser, reCaptchaTokenVerification } from "@/services/AuthService";
+import { useUser } from "@/context/UserContext";
 import { loginUser } from "@/services/AuthService";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 import { toast } from "sonner";
 import { loginSchema } from "./loginValidation";
-import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useUser } from "@/context/UserContext";
 
 import { Eye, EyeOff } from "lucide-react";
 
@@ -30,7 +30,7 @@ export default function LoginForm() {
 
   const { setIsLoading } = useUser();
   // const [reCaptchaStatus, setReCaptchaStatus] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // 👁 Password visibility state
+  const [showPassword, setShowPassword] = useState(false);
 
   const searchParams = useSearchParams();
   const redirect = searchParams.get("redirectPath");
@@ -53,20 +53,17 @@ export default function LoginForm() {
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     try {
-      const res = await loginUser(data);
       setIsLoading(true);
+      const res = await loginUser(data);
       if (res?.success) {
         toast.success(res?.message);
-        if (redirect) {
-          router.push(redirect);
-        } else {
-          router.push("/");
-        }
-      } else {
-        toast.error(res?.message);
+        // console.log("Redirecting to:", redirect || "/");
+        router.push(redirect || "/");
       }
     } catch (err: any) {
       console.error(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -135,7 +132,7 @@ export default function LoginForm() {
           <Button
             // disabled={!reCaptchaStatus}
             type="submit"
-            className="mt-5 w-full"
+            className="bg-[#F79B72] w-full p-4 text-white hover:text-[#F79B72] rounded-md hover:border-[#F79B72] hover:bg-white hover:border flex-1 cursor-pointer transition duration-300"
           >
             {isSubmitting ? "Logging...." : "Login"}
           </Button>
@@ -143,7 +140,7 @@ export default function LoginForm() {
       </Form>
       <p className="text-sm text-gray-600 text-center my-3">
         Do not have an account?{" "}
-        <Link href="/register" className="text-primary">
+        <Link href="/register" className="text-[#F79B72]">
           Register
         </Link>
       </p>

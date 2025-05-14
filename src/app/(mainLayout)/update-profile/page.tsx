@@ -1,17 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
-import { User, Home, Phone, Mail, Loader2 } from "lucide-react";
-import { updateUserProfile } from "@/services/Users";
 import { useUser } from "@/context/UserContext";
+import { updateUserProfile } from "@/services/Users";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Home, Loader2, Mail, Phone, User } from "lucide-react";
+import { useEffect } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { toast } from "sonner";
+import * as z from "zod";
 // import { useUser } from "@/hooks/useUser";
 
 // Validation Schema
@@ -137,10 +137,12 @@ const UpdateProfile = () => {
           <div className="text-center mb-6 sm:mb-8">
             <div
               className="mx-auto mb-4 sm:mb-6 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-cyan-300"
-              style={{
-                // background: `linear-gradient(135deg, ${blueColors.primary} 0%, ${blueColors.secondary} 100%)`,
-                // background: `bg-gradient-to-r from-blue-300 to-cyan-200`,
-              }}
+              style={
+                {
+                  // background: `linear-gradient(135deg, ${blueColors.primary} 0%, ${blueColors.secondary} 100%)`,
+                  // background: `bg-gradient-to-r from-blue-300 to-cyan-200`,
+                }
+              }
             >
               <User className="text-white w-10 h-10 sm:w-12 sm:h-12" />
             </div>

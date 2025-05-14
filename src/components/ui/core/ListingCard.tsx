@@ -1,7 +1,7 @@
 import Image from "next/image";
 // import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Heart } from "lucide-react";
+import Link from "next/link";
 // import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
@@ -21,7 +21,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
   return (
     <>
       <Link href={`/listings/${listing?.id}`} passHref>
-        <div className="bg-white rounded-xl shadow-2xl hover:shadow-lg transition decoration-300 h-[480px]">
+        <div className="bg-white rounded-xl shadow-2xl hover:shadow-lg transition decoration-300 h-[490px]">
           {/* image block */}
           <div className="relative w-full h-56 ">
             <Image
@@ -37,7 +37,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
               className="rounded-t-xl"
             />
             <div className=" absolute left-4 top-4 z-20">
-              <Heart className="text-red-600 w-10 h-10" />
+              <Heart className="text-[#F79B72] w-5 h-5" />
             </div>
           </div>
           {/* content block */}
@@ -53,7 +53,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
                 <div className="">
                   {/*  */}
                   <span className=" font-bold">
-                    <span className="text-2xl  text-[#0AA5CD]">
+                    <span className="text-2xl  text-[#F79B72]">
                       ৳{listing.rentAmount}
                     </span>
                     {/* <span> /</span>
@@ -68,7 +68,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
                   <span className=" text-xs mt-3">
                     {listing.bedrooms} Bedrooms
                   </span>
-                  {/* <div className="flex gap-1 text-[#0AA5CD]">
+                  {/* <div className="flex gap-1 text-[#F79B72]">
                     <FaStar />
                     <FaStar />
                     <FaStar />
@@ -81,7 +81,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
             {/* tags */}
             <div className="my-6">
               <div className="flex gap-2 text-[10px] flex-wrap">
-                {listing.amenities.slice(0, 3).map((amenity, idx) => (
+                {listing.amenities.slice(0, 2).map((amenity, idx) => (
                   <span
                     key={idx}
                     className="bg-gray-200 px-4 py-1 rounded-2xl  "
@@ -93,7 +93,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
             </div>
             {/* location */}
             <div className=" flex gap-0.5 text-gray-500 font-semibold capitalize">
-              <span className="text-[#0AA5CD]">
+              <span className="text-[#F79B72]">
                 <FaLocationDot />
               </span>
               <h3 className="text-sm">{listing.location}, bangladesh</h3>

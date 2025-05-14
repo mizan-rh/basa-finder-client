@@ -1,18 +1,19 @@
 "use client";
 
-import * as React from "react";
 import {
   Bot,
   Building,
-  SquareTerminal,
-  Users,
-  Settings,
-  Send,
-  LifeBuoy,
   FileText,
+  LifeBuoy,
+  Send,
+  Settings,
+  SquareTerminal,
   User,
+  Users,
 } from "lucide-react";
+import * as React from "react";
 
+import Logo from "@/assets/svgs/Logo";
 import {
   Sidebar,
   SidebarContent,
@@ -22,11 +23,10 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
-import Link from "next/link";
-import Logo from "@/assets/svgs/Logo";
-import { usePathname } from "next/navigation";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
@@ -291,7 +291,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link href="/">
-                <div className="flex items-center justify-center">
+                <div className="flex py-20 items-center justify-center overflow-hidden">
                   <Logo />
                 </div>
               </Link>

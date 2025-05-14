@@ -85,7 +85,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
                 step={1000}
                 value={priceRange}
                 onValueChange={(value) => setPriceRange(value)}
-                className=" bg-[#0AA5CD] rounded-3xl text-xs"
+                className=" bg-[#F79B72] rounded-3xl text-xs"
               />
               <span>৳{priceRange[1].toLocaleString()}</span>
             </div>
@@ -101,37 +101,37 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
               </SelectTrigger>
               <SelectContent className="bg-gray-50">
                 <SelectItem
-                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  className="hover:bg-[#F79B72] hover:text-white"
                   value="any"
                 >
                   Bedrooms
                 </SelectItem>
                 <SelectItem
-                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  className="hover:bg-[#F79B72] hover:text-white"
                   value="1"
                 >
                   1 Bedrooms
                 </SelectItem>
                 <SelectItem
-                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  className="hover:bg-[#F79B72] hover:text-white"
                   value="2"
                 >
                   2 Bedrooms
                 </SelectItem>
                 <SelectItem
-                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  className="hover:bg-[#F79B72] hover:text-white"
                   value="3"
                 >
                   3 Bedrooms
                 </SelectItem>
                 <SelectItem
-                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  className="hover:bg-[#F79B72] hover:text-white"
                   value="4"
                 >
                   4 Bedrooms
                 </SelectItem>
                 <SelectItem
-                  className="hover:bg-[#0AA5CD] hover:text-white"
+                  className="hover:bg-[#F79B72] hover:text-white"
                   value="5"
                 >
                   5+ Bedrooms
@@ -144,7 +144,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
           <div onClick={() => setOpen(true)} className="w-full ">
             <button
               onClick={handleSearch}
-              className="bg-[#0AA5CD] w-full p-4 text-white rounded-md hover:bg-black flex-1 cursor-pointer transition duration-300"
+              className="bg-[#F79B72] w-full p-4 text-white hover:text-[#F79B72] rounded-md hover:border-[#F79B72] hover:bg-white hover:border flex-1 cursor-pointer transition duration-300"
             >
               Search
             </button>
@@ -164,7 +164,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
 
       {/* Listings Grid */}
       {open ? (
-        <div className=" sticky z-30 bg-gray-100 rounded-2xl shadow-2xl my-10">
+        <div className="  z-30 bg-gray-100 rounded-2xl top-[700px] left-0 absolute tranfor  -translate-y-1/2  shadow-2xl my-10">
           <div className=" relative ">
             <div
               onClick={() => {
@@ -206,7 +206,7 @@ const Filtering: React.FC<FilteringProps> = ({ initialListings }) => {
                 {/* Listings Header */}
                 <div className="text-center">
                   <Link href="/listings">
-                    <button className="rounded px-4 py-2 text-white font-bold cursor-pointer bg-[#0aa5cd] hover:bg-black transition duration-300">
+                    <button className="rounded px-4 py-2 text-white font-bold cursor-pointer bg-[#F79B72] hover:bg-black transition duration-300">
                       View All
                     </button>
                   </Link>
