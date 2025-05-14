@@ -1,14 +1,11 @@
 "use client";
 
 import bedroom from "@/assets/images/image/bedroom-9.jpg";
-import { useUser } from "@/context/UserContext";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 const HeroBanner = () => {
-  const { user } = useUser();
-  // console.log(user);
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 my-16">
       <div className="grid md:grid-cols-2 items-center gap-10">
@@ -46,13 +43,11 @@ const HeroBanner = () => {
             landlords reach the right people — securely, smartly, and easily.
           </p>
           <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-5">
-            {user?.role === "landlord" && (
-              <Link href="/landlords/listings">
-                <button className="bg-[#0AA5CD] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#000] transition duration-300">
-                  Post a Rental
-                </button>
-              </Link>
-            )}
+            <Link href="/landlords/listings">
+              <button className="bg-[#0AA5CD] text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#000] transition duration-300">
+                Post a Rental
+              </button>
+            </Link>
             <Link href="/listings">
               <button className="px-6 py-3 rounded-lg border-2 border-[#0AA5CD] text-[#0AA5CD] font-semibold hover:bg-[#0AA5CD] hover:text-white transition duration-300">
                 Browse Listings

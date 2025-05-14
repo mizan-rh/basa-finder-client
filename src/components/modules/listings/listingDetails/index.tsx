@@ -33,17 +33,19 @@ import { useRentalRequest } from "@/context/RentalRequestContext";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
   const { user } = useUser();
   const { setListing } = useRentalRequest();
   const router = useRouter();
+  const pathname = usePathname();
 
   const [modalOpen, setModalOpen] = useState(false);
   const [moveInDate, setMoveInDate] = useState("");
   const [rentalDuration, setRentalDuration] = useState("");
   const [specialRequirements, setSpecialRequirements] = useState("");
-
   // ✅ Handle request button click
   const handleRequestRent = () => {
     setModalOpen(true);
@@ -73,26 +75,23 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
   };
 
   return (
-    <Card className="container mx-auto my-10 p-6 bg-white grid md:grid-cols-2 border-0 rounded-2xl hover:shadow-2xl cursor-pointer">
+    <div className="container mx-auto my-10 p-6 bg-white grid md:grid-cols-2 border-0 rounded-2xl min-h-screen cursor-pointer">
+      <div className="">
+        <Carousel>
+          {listing.images.map((image, idx) => (
+            <div key={idx} className="relative w-full h-80">
+              <Image
+                src={image.replace("http://", "https://") || "/placeholder.jpg"}
+                alt={`Listing Image ${idx}`}
+                fill
+                className="object-cover rounded-xl"
+              />
+            </div>
+          ))}
+        </Carousel>
+      </div>
       {/* Swiper for Listing Images */}
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        className="w-full h-80 rounded-xl"
-      >
-        {listing.images.map((image, idx) => (
-          <SwiperSlide key={idx} className="relative w-full h-80">
-            <Image
-              src={image.replace("http://", "https://") || "/placeholder.jpg"}
-              alt={`Listing Image ${idx}`}
-              fill
-              className="object-cover rounded-xl"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      
 
       <CardContent className="mt-8 space-y-4">
         <h1 className="text-3xl font-bold text-gray-800">{listing.location}</h1>
@@ -122,19 +121,29 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
         <div className="flex flex-col md:flex-row gap-6 mt-6">
           {user ? (
             <div className="">
-              {user?.role === "tenant" && (
+              <Button
+                className="rounded-full px-6 py-2"
+                onClick={handleRequestRent}
+              >
+                Request Rental
+              </Button>
+              {/* {user?.role && (
                 <Button
                   className="rounded-full px-6 py-2"
                   onClick={handleRequestRent}
                 >
                   Request Rental
                 </Button>
-              )}
+              )} */}
             </div>
           ) : (
-            <Link href={"/login"} className=" text-xs text-gray-500 capitalize">
-              [note: if u rent a house please login as(tenants)]
-            </Link>
+            <div className="">
+              <Link href={`/login?redirect=${encodeURIComponent(pathname)}`}>
+                <Button className="rounded-full px-6 py-2">
+                  Request Rental
+                </Button>
+              </Link>
+            </div>
           )}
         </div>
       </CardContent>
@@ -194,7 +203,7 @@ const ListingDetails = ({ listing }: { listing: TRentalListing }) => {
           </DialogFooter>
         </DialogContent>
       </Dialog>
-    </Card>
+    </div>
   );
 };
 
