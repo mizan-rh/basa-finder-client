@@ -5,7 +5,7 @@ import CtaSection from "./CtaSection";
 
 export default function BlogDetailsPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10 text-gray-800">
+    <div className="mx-auto  pt-28  container pb-10 text-gray-800">
       {/* Hero Image */}
       <div className="relative w-full h-72 mb-6 rounded-2xl overflow-hidden">
         <Image

@@ -71,7 +71,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
   };
 
   return (
-    <NMContainer className="my-10 px-4 lg:px-10">
+    <NMContainer className="my-10 px-4 py-10 lg:pt-28 lg:px-10">
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Left Sidebar - Filters */}
         <div className="w-full lg:w-1/4 bg-white p-6 rounded-xl shadow-md h-fit">
@@ -153,7 +153,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
         <div className="w-full lg:w-3/4">
           {paginatedListings.length > 0 ? (
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {paginatedListings.map((listing, idx) => (
                   <ListingCard
                     key={idx}
@@ -162,7 +162,7 @@ const RentalListings: React.FC<RentalListingsProps> = ({ initialListings }) => {
                       location: listing.location,
                       rentAmount: listing.rentAmount,
                       bedrooms: listing.bedrooms,
-                      amenities: listing.amenities.slice(0, 2),
+                      amenities: listing.amenities.slice(0, 4),
                       description: listing.description,
                       images: listing.images,
                     }}

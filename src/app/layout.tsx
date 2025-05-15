@@ -5,11 +5,18 @@ import { Toaster } from "sonner";
 import "./globals.css";
 import "./style.css";
 
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
 export const metadata: Metadata = {
-  icons: {
-    icon: "/favicon.png", // PNG favicon
-  },
-  title: "BasaFinder | Smart Rental & Housing Solution",
+  title: "BasaFinder | Smart Rental & Housing Solution ",
   description: "Smart Rental & Housing Solution",
 };
 
@@ -20,9 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <Head>
-        <link rel="icon" type="image/png" href="/favicon.png" />
-      </Head> */}
       <body className={`antialiased`}>
         <Providers>
           <Toaster richColors position="top-center" />

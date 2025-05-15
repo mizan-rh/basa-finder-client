@@ -31,7 +31,7 @@ const teamMembers = [
 
 const AboutUs = () => {
   return (
-    <div className=" w-full lg:px-10  px-4 ">
+    <div className=" w-full lg:px-10 pt-28 px-4 ">
       {/* Mission Section */}
       <section className="bg-white shadow ">
         <div className="container mx-auto py-10 text-center flex justify-center items-center flex-col ">
@@ -53,7 +53,7 @@ const AboutUs = () => {
             Our Mission at BasaFinder
           </motion.h1>
           <motion.p
-            className="text-base md:text-md text-gray-600 leading-relaxed w-3/4 flex "
+            className="text-base md:text-md text-gray-600 leading-relaxed lg:w-3/4 flex "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -88,7 +88,7 @@ const AboutUs = () => {
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
-                className="rounded-xl bg-white shadow-md p-6 text-center hover:scale-105 transition-transform"
+                className="rounded-xl bg-white p-6 shadow-md text-center hover:scale-105 transition-transform"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
@@ -115,7 +115,7 @@ const AboutUs = () => {
 
       {/* Contact Info */}
       <section className=" text-white py-10 ">
-        <div className="container mx-auto ">
+        <div className="">
           <h2 className="text-2xl md:text-3xl font-bold text-center text-black mb-12">
             Contact Us
           </h2>

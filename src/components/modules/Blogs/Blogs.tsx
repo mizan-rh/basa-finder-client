@@ -43,7 +43,7 @@ const blogs = [
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen px-4 py-12 bg-white text-gray-900">
+    <main className="min-h-screen px-4 pt-20 lg:pt-28 bg-white text-gray-900">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center">
           Basa Finder Blog

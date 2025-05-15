@@ -32,7 +32,7 @@ const testimonials = [
 
 const TestimonialsPage = () => {
   return (
-    <section className=" bg-[#F9FAFB] py-10 ">
+    <section className=" bg-[#F9FAFB] lg:px-10 px-4 py-10 ">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">What Our Users Say</h2>
       </div>

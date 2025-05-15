@@ -37,22 +37,24 @@ const testimonials = [
 
 const TestimonialSection = () => {
   return (
-    <section className=" py-10  container mx-auto">
-      <div className="text-center pb-10 pt-24">
+    <section className="pt-20 pb-10 lg:pt-24 container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Section Header */}
+      <div className="text-center mb-12">
         <p className="text-sm uppercase tracking-widest text-[#F79B72]">
           Testimonials
         </p>
-        <h2 className="text-4xl font-bold text-gray-800">What They Say</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
+          What They Say
+        </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Testimonial Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {testimonials.map((item, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-xl shadow-md text-center flex flex-col items-center group transition-all duration-300"
-            style={{
-              backgroundColor: item.bgColor,
-            }}
+            className="p-6 sm:p-8 rounded-xl shadow-md text-center flex flex-col items-center group transition-all duration-300"
+            style={{ backgroundColor: item.bgColor }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLDivElement).style.backgroundColor =
                 item.hoverBgColor;
@@ -62,18 +64,20 @@ const TestimonialSection = () => {
                 item.bgColor;
             }}
           >
-            <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden mb-4">
               <Image
                 src={item.image}
                 alt={item.name}
-                width={160}
-                height={160}
+                width={128}
+                height={128}
                 className="object-cover w-full h-full"
               />
             </div>
-            <p className="text-gray-600 mb-4 text-sm">{item.text}</p>
+            <p className="text-gray-600 mb-4 text-sm sm:text-base">
+              {item.text}
+            </p>
             <h3
-              className="font-bold transition-colors duration-300"
+              className="font-bold text-base sm:text-lg"
               style={{ color: item.textColor }}
             >
               {item.name}

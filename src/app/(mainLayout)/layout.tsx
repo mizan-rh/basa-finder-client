@@ -12,7 +12,7 @@ const MainLayout = ({
       {/* navbar */}
       <Navbar />
       {/* main content */}
-      <div className=" min-h-screen">{children}</div>
+      <div className=" ">{children}</div>
       {/* footer */}
       <Footer />
     </div>

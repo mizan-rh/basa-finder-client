@@ -27,7 +27,7 @@ const RulesSection = () => {
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 py-10">
           {/* Left Text Content */}
           <div className="space-y-6 text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl font-bold leading-tight py-6">
+            <h2 className="text-2xl sm:text-4xl font-bold leading-tight py-6">
               Rules Before <br className="hidden lg:block" /> Taking House on
               Rent
             </h2>
@@ -60,7 +60,7 @@ const RulesSection = () => {
 
       {/* Stats Section */}
       {/* Stats Section */}
-      <div className="absolute left-1/2 md:bottom-[-5rem] transform -translate-x-1/2 w-[90%] max-w-6xl bg-[#00080c] shadow-2xl md:rounded-xl text-white z-10">
+      <div className="absolute hidden lg:inline-block left-1/2 md:bottom-[-5rem] transform -translate-x-1/2 w-[90%] max-w-6xl bg-[#00080c] shadow-2xl md:rounded-xl text-white z-10">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center p-6">
           <div className="hover:bg-white transition duration-300 hover:text-[#F79B72] p-4 rounded-md cursor-pointer">
             <FaHome className="text-3xl mx-auto mb-2" />

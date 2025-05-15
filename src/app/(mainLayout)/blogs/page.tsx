@@ -3,9 +3,9 @@ import TestimonialsPage from "@/components/modules/Testmonials/Testmonials";
 
 const BlogsPage = () => {
   return (
-    <div>
+    <div >
       <BlogPage />
-      <TestimonialsPage />
+      <TestimonialsPage  />
     </div>
   );
 };

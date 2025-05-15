@@ -1,5 +1,6 @@
 "use client";
 
+import AdminDashboard from "@/components/modules/dashboard/AdminDashboard";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import NMContainer from "@/components/ui/core/NMContainer";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -8,14 +9,13 @@ import { getSingleUser } from "@/services/Users";
 import { IUser } from "@/types";
 import { useEffect, useState } from "react";
 
-const AdminDashboard = () => {
+const AdminHomePage = () => {
   const { user } = useUser();
   const [userData, setUserData] = useState<IUser | null>(null);
 
   useEffect(() => {
     const fetchUserData = async () => {
       if (!user?.userId) return;
-
       try {
         const res = await getSingleUser(user.userId);
         if (res?.success) {
@@ -32,75 +32,76 @@ const AdminDashboard = () => {
   if (!userData) {
     return (
       <NMContainer>
-        <Skeleton className="h-60 w-full rounded-lg" />
-        <Skeleton className="h-8 w-1/2 my-4" />
-        <Skeleton className="h-6 w-full mb-2" />
+        <Skeleton className="h-60 w-full rounded-xl" />
+        <Skeleton className="h-8 w-1/3 my-6" />
+        <Skeleton className="h-6 w-full mb-3" />
         <Skeleton className="h-6 w-2/3" />
       </NMContainer>
     );
   }
+
   return (
-    <div>
-      <h1 className="text-center font-bold text-lg">Admin Dashboard</h1>
-      <NMContainer className="max-w-4xl mx-auto my-10 p-8 bg-white shadow-lg rounded-3xl">
-        <div className="flex flex-col md:flex-row items-center md:space-x-8 space-y-6 md:space-y-0">
-          <Avatar className="w-24 h-24 md:w-32 md:h-32 border-4 border-blue-500">
-            {/* <AvatarImage src={userData.profileImg || "/user-placeholder.jpg"} /> */}
-            <AvatarImage
-              src={
-                userData.profileImg ||
-                "https://i.postimg.cc/QxnWx7KH/user-placeholder.jpg"
-              }
-            />
-            <AvatarFallback>{userData.name[0]}</AvatarFallback>
-          </Avatar>
-          <div className="text-center md:text-left">
-            <h2 className="text-3xl font-bold text-gray-800">
+    <NMContainer className="min-h-screen ">
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-900">
+        {userData.role} Dashboard
+      </h1>
+
+      <div className="flex flex-col justify-center items-center gap-10">
+        {/* Profile Section */}
+        <div className="w-full lg:w-1/3 bg-white border border-gray-200 shadow-lg rounded-2xl p-6">
+          <div className="flex flex-col items-center text-center">
+            <Avatar className="w-28 h-28 mb-4 border-4 border-orange-300 shadow">
+              <AvatarImage
+                src={
+                  userData.profileImg ||
+                  "https://i.postimg.cc/QxnWx7KH/user-placeholder.jpg"
+                }
+              />
+              <AvatarFallback>{userData.name?.charAt(0) || "U"}</AvatarFallback>
+            </Avatar>
+
+            <h2 className="text-xl font-semibold text-gray-800">
               {userData.name}
             </h2>
-            <p className="text-gray-600 font-semibold">{userData.email}</p>
-            <p className="text-sm text-blue-600 font-semibold capitalize">
+            <p className="text-sm text-gray-500">{userData.email}</p>
+            <span className="mt-2 inline-block bg-orange-100 text-orange-600 text-xs px-3 py-1 rounded-full capitalize font-medium">
               {userData.role}
-            </p>
+            </span>
+
+            <div className="mt-6 space-y-4 text-sm text-left text-gray-700 w-full">
+              <InfoItem label="Phone Number" value={userData.phone_number} />
+              <InfoItem label="Address" value={userData.address} />
+              <InfoItem
+                label="Account Status"
+                value={userData.isBlocked ? "Blocked" : "Active"}
+                color={userData.isBlocked ? "text-red-500" : "text-green-600"}
+              />
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-4 bg-white shadow-sm rounded-xl">
-            <p className="text-sm text-gray-600">Phone Number:</p>
-            <p className="text-lg font-medium text-gray-800">
-              {userData.phone_number || "N/A"}
-            </p>
-          </div>
-
-          <div className="p-4 bg-white shadow-sm rounded-xl">
-            <p className="text-sm text-gray-600">Email:</p>
-            <p className="text-lg font-medium text-gray-800">
-              {userData.email || "N/A"}
-            </p>
-          </div>
-
-          <div className="p-4 bg-white shadow-sm rounded-xl">
-            <p className="text-sm text-gray-600">Address:</p>
-            <p className="text-lg font-medium text-gray-800">
-              {userData.address || "N/A"}
-            </p>
-          </div>
-
-          <div className="p-4 bg-white shadow-sm rounded-xl">
-            <p className="text-sm text-gray-600">Account Status:</p>
-            <p
-              className={`text-lg font-medium ${
-                userData.isBlocked ? "text-red-500" : "text-green-500"
-              }`}
-            >
-              {userData.isBlocked ? "Blocked" : "Active"}
-            </p>
-          </div>
+        {/* Dashboard Section */}
+        <div className="w-full  bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-md min-h-[300px]">
+          <AdminDashboard />
         </div>
-      </NMContainer>
-    </div>
+      </div>
+    </NMContainer>
   );
 };
 
-export default AdminDashboard;
+const InfoItem = ({
+  label,
+  value,
+  color = "text-gray-800",
+}: {
+  label: string;
+  value?: string;
+  color?: string;
+}) => (
+  <div>
+    <p className="text-xs text-gray-500 mb-1">{label}:</p>
+    <p className={`font-medium ${color}`}>{value || "N/A"}</p>
+  </div>
+);
+
+export default AdminHomePage;

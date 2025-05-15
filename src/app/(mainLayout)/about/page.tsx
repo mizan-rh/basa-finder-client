@@ -2,7 +2,7 @@ import AboutUs from "@/components/modules/about/About";
 
 const page = () => {
   return (
-    <div>
+    <div className="">
       {/* add or create all about page info & content static content add from demo figma */}
       <AboutUs />
     </div>

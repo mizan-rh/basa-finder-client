@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="w-full my-10 ">
+    <section className="w-full my-10 lg: pt-28 ">
       <div className="container mx-auto px-4 md:px-10">
         <p className="text-sm uppercase tracking-widest text-[#F79B72] text-center">
           BASA FINDER
@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
           Contact Me
         </h2>
 
-        <div className=" flex py-10 flex-col-reverse gap-5 lg:flex-row items-center justify-between ">
+        <div className=" flex py-10 flex-col-reverse gap-5 lg:gap-8 lg:flex-row items-center justify-between ">
           {/* Form Section */}
           <div className="w-full lg:w-1/2 bg-white p-5   rounded-2xl shadow-2xl">
             <p className="text-xl font-semibold text-center text-gray-700 mb-6">
